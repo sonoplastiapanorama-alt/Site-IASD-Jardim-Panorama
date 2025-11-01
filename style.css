@@ -1,9 +1,22 @@
-.body{
-  padding-top: 280px;
-
+/* ====================================== */
+/* Reset básico - aplicado a todos os elementos */
+/* ====================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Oswald", sans-serif;
+}
+
+/* ====================================== */
 /* Config da barra do topo */
+/* ====================================== */
 .topo {
   width: 100%;
   background-color: white;
@@ -11,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.1rem 5rem; /* padding ajustado */
+  padding: 0.1rem 5rem;
   position: fixed;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   top: 0;
@@ -31,7 +44,7 @@
   height: 5rem;
   width: auto;
   z-index: 1000;
-  position: relative; /* volta para o fluxo normal */
+  position: relative;
   right: 50px;
 }
 
@@ -44,7 +57,7 @@
 .menu a {
   color: black;
   text-decoration: none;
-  margin-left:4rem;
+  margin-left: 4rem;
   font-weight: 300;
   font-family: "Oswald", sans-serif;
   font-size: 20px;
@@ -61,22 +74,41 @@
   font-size: 2rem;
   cursor: pointer;
   color: black;
-  position: relative; /* volta para o fluxo */
+  position: relative;
   left: 50px;
-} 
+}
 
+/* ====================================== */
+/* Container do carrossel */
+/* ====================================== */
+.carrossel {
+  display: flex;
+  overflow: hidden;
+  margin-top: 80px;
+  transition: transform 1s ease;
+  width: max-content;
+  height: auto;
+}
+
+.carrossel img {
+  flex-shrink: 0;
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* ====================================== */
+/* Página inicial - Seção de botões (pagina1) */
+/* ====================================== */
 #pagina1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: auto; /* margem interna confortável */
-  box-sizing: border-box;
   flex-direction: column;
   margin-top: 0;
   padding-top: 0;
-
 }
-
 
 #link {
   display: flex;
@@ -100,37 +132,9 @@
   box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  #link img {
-    width: 90px;
-    height: 90px;
-  }
-
-  #link {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  #link img {
-    width: 70px;
-    height: 70px;
-  }
-
-  #link {
-    gap: 15px;
-  }
-}
-
-
-/* Responsividade */
-@media (max-width: 600px) {
-  #link img {
-    width: 90px;
-    height: 90px;
-  }
-}
+/* ====================================== */
+/* Página inicial - Quem somos (pagina2) */
+/* ====================================== */
 #pagina2 {
   background-color: #f5f5f5f8;
   width: 100%;
@@ -138,19 +142,19 @@
 }
 
 .conteudo {
-  display: flex;              /* Deixa imagem e texto lado a lado */
-  align-items: center;        /* Centraliza verticalmente */
-  justify-content: center;    /* Centraliza horizontalmente o bloco */
-  gap: 2rem;                  /* Espaço entre imagem e texto */
-  max-width: 1200px;          /* Limita a largura total */
-  margin: 0 auto;             /* Centraliza o conteúdo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 2rem;
 }
 
 #pagina2 img {
-  width: 450px; 
+  width: 450px;
   height: 450px;
-  object-fit: contain;        /* Mantém proporção */
+  object-fit: contain;
 }
 
 .texto {
@@ -173,162 +177,25 @@
   margin-bottom: 0.8rem;
 }
 
-/* 🔹 RESPONSIVIDADE */
-@media (max-width: 768px) {
-  .conteudo {
-    flex-direction: column;   /* Coloca imagem em cima e texto embaixo */
-    text-align: center;
-  }
-
-  #pagina2 img {
-    width: 250px;
-    height: auto;
-  }
-
-  #pagina2 h2 {
-    text-align: center;
-    font-size: 30px;
-  }
-
-  .texto {
-    max-width: 90%;
-  }
-
-  #pagina2 p {
-    font-size: 13px;
-  }
-}
-
-
-/* Remove margens e espaçamentos padrões */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Remove qualquer sobra de espaço e rolagem */
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  
-}
-
-/* Container do carrossel */
-.carrossel {
-  display: flex;
-  overflow: hidden;
-  margin-top: 80px;
-  transition: transform 1s ease;
-  width: max-content; /* se ajusta à quantidade de imagens */
-  height: auto; /* altura padrão para telas grandes */
-}
-
-/* Imagens do carrossel */
-.carrossel img {
-  flex-shrink: 0;
-  width: 100vw;  /* sempre ocupa toda a largura visível */
-  height: auto; /* altura cheia da tela no PC */
-  object-fit: cover; /* preenche sem distorcer */
-  display: block;
-}
-
-/* 🔹 Ajustes para telas menores (celulares) */
-@media (max-width: 768px) {
-  .carrossel {
-    height: auto; /* altura menor em celulares */
-  }
-
-  .carrossel img {
-    width: 100vw;
-    height: auto;
-    object-fit: cover;
-  }
-}
-
-
-
-/* --------------- RESPONSIVO + ANIMAÇÃO SUAVE --------------- */
-/* Importante: mantemos o visual original em desktop e só alteramos mobile */
-@media (max-width: 768px) {
-
-  /* mostramos o ícone hamburguer */
-  .menu-icon {
-    display: block;
-    z-index: 1100; /* acima do menu */
-  }
-
-  /* Menu inicialmente escondido (usando max-height para animar) */
-  .menu {
-    display: flex; /* mantém flex para os links empilharem com flex-direction */
-    flex-direction: column;
-    align-items: flex-end; /* alinhar à direita como antes */
-    background-color: white;
-    position: absolute;
-    top: 80px; /* ficará logo abaixo da barra fixa */
-    right: 0;
-    width: 200px;
-    padding: 0 1rem;
-    max-height: 0;           /* fechado */
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-    border-radius: 0 0 6px 6px;
-  }
-
-  .menu a {
-    margin: 0.8rem 0;
-  }
-
-  /* Quando ativo, expande o menu (altura suficiente para os links) */
-  .menu.ativo {
-    max-height: 300px; /* ajusta se tiver mais/menos links */
-    padding: 0.8rem 1rem;
-  }
-}
-
-/* No desktop garantimos que o menu apareça normalmente */
-@media (min-width: 769px) {
-  .menu {
-    display: flex;
-  }
-}
-
-
-/* Ícones sociais */
-.fa-instagram {
-  color: #E4405F; /* cor oficial do Instagram */
-  font-size: 30px;
-  margin-right: 10px;
-}
-
-.fa-whatsapp{
-  color: #25d366;
-  font-size: 30px;
-  margin-right: 10px;
-}
-
+/* ====================================== */
+/* Página inicial - Pedido de oração (pagina3) */
+/* ====================================== */
 #pagina3 {
   background: linear-gradient(rgb(234, 233, 232), rgb(0, 0, 0, 0)),
               url('Imagens/fundo_pedido_oracao.jpg') no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 600px;
-
-  /* 👇 Adicionado para centralizar conteúdo */
   display: flex;
-  flex-direction: column; /* mantém o h2 em cima e o iframe embaixo */
-  align-items: center;    /* centraliza horizontalmente */
-  justify-content: flex-start; /* mantém tudo alinhado no topo */
-  gap: 30px; /* espaço entre o título e o iframe */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
 }
 
 #pagina3 h2 {
   max-width: 600px;
-  margin: 0px auto;
+  margin: 0 auto;
   background: #f9f9f9;
   padding: 25px;
   border-radius: 15px;
@@ -337,31 +204,43 @@ html, body {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: relative;
-  top: 60px; /* 🔹 Reduzi o deslocamento pra combinar com o flexbox */
+  top: 60px;
 }
 
-/* Área principal do formulário */
 #pagina3 iframe {
   width: 100%;
-  max-width: 453px;  /* limite máximo para desktops */
-  height: 60vh;      /* altura proporcional à tela */
+  max-width: 453px;
+  height: 60vh;
   border-radius: 10px;
   border: 2px solid #222;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
   margin-top: 50px;
-
-  /* 👇 Garante que o iframe respeite o alinhamento central */
   display: block;
 }
 
+/* ====================================== */
+/* Ícones sociais */
+/* ====================================== */
+.fa-instagram {
+  color: #E4405F;
+  font-size: 30px;
+  margin-right: 10px;
+}
 
+.fa-whatsapp {
+  color: #25d366;
+  font-size: 30px;
+  margin-right: 10px;
+}
 
-/*pagina do clube*/
+/* ====================================== */
+/* Página do Clube de Desbravadores */
+/* ====================================== */
 
 /* Fundo da seção principal */
 #pag1 {
   background-color: black;
-  min-height: 100vh; /* ocupa a tela toda */
+  min-height: 100vh;
   padding: 40px 20px;
 }
 
@@ -376,9 +255,9 @@ html, body {
 .dbv img {
   display: block;
   margin: 0 auto;
-  max-width: 90%; /* evita que ultrapasse a tela */
+  max-width: 90%;
   height: auto;
-  border-radius: 10px; /* opcional, só pra ficar mais bonito */
+  border-radius: 10px;
 }
 
 /* Título */
@@ -404,7 +283,153 @@ html, body {
   margin-right: auto;
 }
 
-/* 📱 Responsividade */
+/* Fundo da segunda seção */
+#pag2 {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+/* Centraliza o conteúdo */
+.botoes {
+  margin-top: 30px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Ícones dos botões sociais */
+.botoes a {
+  font-size: 40px;
+  color: rgb(9, 0, 0);
+  transition: 0.3s;
+}
+
+.botoes a:hover {
+  transform: scale(1.2);
+}
+
+.botoes a:nth-child(1):hover {
+  color: #E4405F;
+}
+
+.botoes a:nth-child(2):hover {
+  color: #25D366;
+}
+
+/* ====================================== */
+/* RESPONSIVIDADE */
+/* ====================================== */
+
+/* Ajustes do carrossel e imagens */
+@media (max-width: 768px) {
+  .carrossel {
+    height: auto;
+  }
+
+  .carrossel img {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+/* Menu responsivo (hambúrguer) */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    z-index: 1100;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: white;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    border-radius: 0 0 6px 6px;
+  }
+
+  .menu a {
+    margin: 0.8rem 0;
+  }
+
+  .menu.ativo {
+    max-height: 300px;
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* No desktop o menu volta ao normal */
+@media (min-width: 769px) {
+  .menu {
+    display: flex;
+  }
+}
+
+/* Responsividade página 2 (Quem Somos) */
+@media (max-width: 768px) {
+  .conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #pagina2 img {
+    width: 250px;
+    height: auto;
+  }
+
+  #pagina2 h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .texto {
+    max-width: 90%;
+  }
+
+  #pagina2 p {
+    font-size: 13px;
+  }
+}
+
+/* Responsividade - seção de botões iniciais */
+@media (max-width: 768px) {
+  #link img {
+    width: 90px;
+    height: 90px;
+  }
+
+  #link {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #link img {
+    width: 70px;
+    height: 70px;
+  }
+
+  #link {
+    gap: 15px;
+  }
+}
+
+/* Responsividade - página do DBV */
 @media (max-width: 1024px) {
   .dbv h2 {
     font-size: 32px;
@@ -425,6 +450,10 @@ html, body {
     font-size: 16px;
     padding: 0 10px;
   }
+
+  .botoes a {
+    font-size: 35px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -443,102 +472,6 @@ html, body {
   .dbv p {
     font-size: 15px;
     line-height: 1.5;
-  }
-}
-
-/* Fundo da seção */
-#pag2 {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px 20px;
-}
-
-/* Centraliza o conteúdo */
-.conteudo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Título */
-.titulo {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #00ff88;
-}
-
-/* Formulário (iframe) */
-#pag2 iframe {
-  width: 100%;
-  max-width: 640px;  /* limite máximo para desktops */
-  height: 80vh;      /* altura proporcional à tela */
-  border-radius: 10px;
-  border: 2px solid #222;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-}
-
-/* Botões sociais */
-.botoes {
-  margin-top: 30px;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap; /* quebra linha se faltar espaço */
-}
-
-/* Ícones */
-.botoes a {
-  font-size: 40px;
-  color: rgb(9, 0, 0);
-  transition: 0.3s;
-}
-
-/* Efeito ao passar o mouse */
-.botoes a:hover {
-  color: #00ff88; /* cor de destaque (pode trocar) */
-  transform: scale(1.2);
-}
-
-.botoes a:nth-child(1):hover {
-  color: #E4405F; /* Instagram */
-}
-
-.botoes a:nth-child(2):hover {
-  color: #25D366; /* WhatsApp */
-}
-
-/* 📱 Responsividade */
-@media (max-width: 768px) {
-  .titulo {
-    font-size: 1.6rem;
-  }
-
-  #pag2 iframe {
-    height: 75vh;
-  }
-
-  .botoes a {
-    font-size: 35px;
-  }
-}
-
-@media (max-width: 480px) {
-  #pag2 {
-    padding: 20px 10px;
-  }
-
-  .titulo {
-    font-size: 1.4rem;
-  }
-
-  #pag2 iframe {
-    height: 70vh;
   }
 
   .botoes {
