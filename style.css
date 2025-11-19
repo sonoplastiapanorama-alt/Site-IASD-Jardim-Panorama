@@ -239,34 +239,47 @@ html, body {
 
 /* Fundo da seção principal */
 #pag1 {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
+  margin-top: 80px;
   min-height: 100vh;
   padding: 40px 20px;
 }
 
 /* Seção dbv */
+
 .dbv {
-  background-color: black;
+  background-color: white;
   text-align: center;
   padding: 20px;
 }
 
+.box{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /*background-color: #25d366;*/
+  width: 200px;
+  height: auto;
+}
+
 /* Imagem centralizada */
-.dbv img {
+.box img {
   display: block;
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 200px;
   height: auto;
   border-radius: 10px;
 }
 
 /* Título */
-.dbv h2 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
-                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 40px;
+.box h2 {
+  white-space: nowrap;
+  font-family:"Oswald", sans-serif;;
+  font-size: 80px;
   color: darkgoldenrod;
   margin-top: 20px;
+  padding-right: 400px;
+  /*background-color: aqua;*/
 }
 
 /* Parágrafo */
@@ -275,7 +288,7 @@ html, body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
                 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin-top: 30px;
-  color: white;
+  color: black;
   font-size: 18px;
   line-height: 1.6;
   max-width: 900px;
