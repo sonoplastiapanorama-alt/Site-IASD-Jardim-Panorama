@@ -1,6 +1,7 @@
 /* ====================================== */
-/* Reset básico - aplicado a todos os elementos */
+/* RESET BÁSICO */
 /* ====================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,9 +15,12 @@ html, body {
   font-family: "Oswald", sans-serif;
 }
 
+
+
 /* ====================================== */
-/* Config da barra do topo */
+/* TOPO */
 /* ====================================== */
+
 .topo {
   width: 100%;
   background-color: white;
@@ -26,14 +30,13 @@ html, body {
   align-items: center;
   padding: 0.1rem 5rem;
   position: fixed;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   top: 0;
   left: 0;
   z-index: 1000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Config do Logo */
-.topo .logo {
+.logo {
   display: flex;
   align-items: center;
   font-size: 6rem;
@@ -43,12 +46,11 @@ html, body {
 .logo img {
   height: 5rem;
   width: auto;
-  z-index: 1000;
   position: relative;
   right: 50px;
+  z-index: 1000;
 }
 
-/* Config do Menu */
 .menu {
   display: flex;
   align-items: center;
@@ -59,7 +61,6 @@ html, body {
   text-decoration: none;
   margin-left: 4rem;
   font-weight: 300;
-  font-family: "Oswald", sans-serif;
   font-size: 20px;
   transition: color 0.3s;
 }
@@ -68,46 +69,44 @@ html, body {
   color: #d1cfc6;
 }
 
-/* Ícone do menu (hambúrguer) */
 .menu-icon {
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  color: black;
   position: relative;
   left: 50px;
 }
 
+
+
 /* ====================================== */
-/* Container do carrossel */
+/* CARROSSEL */
 /* ====================================== */
+
 .carrossel {
   display: flex;
   overflow: hidden;
   margin-top: 80px;
   transition: transform 1s ease;
   width: max-content;
-  height: auto;
 }
 
 .carrossel img {
   flex-shrink: 0;
   width: 100vw;
-  height: auto;
   object-fit: cover;
-  display: block;
 }
 
+
+
 /* ====================================== */
-/* Página inicial - Seção de botões (pagina1) */
+/* PÁGINA 1 — BOTÕES INICIAIS */
 /* ====================================== */
+
 #pagina1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  margin-top: 0;
-  padding-top: 0;
+  align-items: center;
 }
 
 #link {
@@ -115,7 +114,6 @@ html, body {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 #link img {
@@ -123,18 +121,21 @@ html, body {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  transition: 0.3s;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #link img:hover {
   transform: scale(0.9);
-  box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 50px rgba(0, 0, 0, 0.3);
 }
 
+
+
 /* ====================================== */
-/* Página inicial - Quem somos (pagina2) */
+/* PÁGINA 2 — QUEM SOMOS */
 /* ====================================== */
+
 #pagina2 {
   background-color: #f5f5f5f8;
   width: 100%;
@@ -143,11 +144,11 @@ html, body {
 
 .conteudo {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 2rem;
 }
 
@@ -162,153 +163,213 @@ html, body {
 }
 
 #pagina2 h2 {
-  color: rgb(5, 5, 5);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 40px;
-  text-align: left;
   margin-bottom: 1rem;
 }
 
 #pagina2 p {
-  color: black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 14px;
-  text-align: justify;
   margin-bottom: 0.8rem;
+  text-align: justify;
 }
 
+
+
 /* ====================================== */
-/* Página inicial - Pedido de oração (pagina3) */
+/* PÁGINA 3 — PEDIDO DE ORAÇÃO */
 /* ====================================== */
+
 #pagina3 {
-  background: linear-gradient(rgb(234, 233, 232), rgb(0, 0, 0, 0)),
-              url('Imagens/fundo_pedido_oracao.jpg') no-repeat center center;
-  background-size: cover;
+  background: linear-gradient(#eae9e8, rgba(0,0,0,0)),
+    url('Imagens/fundo_pedido_oracao.jpg') center/cover no-repeat;
   width: 100%;
   height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   gap: 30px;
 }
 
 #pagina3 h2 {
-  max-width: 600px;
-  margin: 0 auto;
   background: #f9f9f9;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   font-size: 30px;
-  text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: relative;
   top: 60px;
+  text-align: center;
 }
 
 #pagina3 iframe {
   width: 100%;
   max-width: 453px;
-  height: 60vh;
   border-radius: 10px;
   border: 2px solid #222;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
   margin-top: 50px;
-  display: block;
 }
 
-/* ====================================== */
-/* Ícones sociais */
-/* ====================================== */
-.fa-instagram {
-  color: #E4405F;
-  font-size: 30px;
-  margin-right: 10px;
-}
 
-.fa-whatsapp {
-  color: #25d366;
-  font-size: 30px;
-  margin-right: 10px;
-}
 
 /* ====================================== */
-/* Página do Clube de Desbravadores */
+/* ÍCONES SOCIAIS */
 /* ====================================== */
 
-/* Fundo da seção principal */
+.fa-instagram { color: #E4405F; font-size: 30px; }
+.fa-whatsapp  { color: #25d366; font-size: 30px; }
+
+
+
+/* ====================================== */
+/* PÁGINA DBV — FUNDO COM BLUR */
+/* ====================================== */
+
 #pag1 {
-  background-color: rgb(255, 255, 255);
-  margin-top: 80px;
-  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
   padding: 40px 20px;
+  margin-top: 80px;
 }
 
-/* Seção dbv */
-
-.dbv {
-  background-color: white;
-  text-align: center;
-  padding: 20px;
+#pag1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('Imagens/fundodbv/foto-vertical-de-algumas-tendas-no-meio-de-uma-floresta-capturada-na-madeira-portugal.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transform: scale(1.1);
+  z-index: 0;
 }
 
-.box{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  /*background-color: #25d366;*/
-  width: 200px;
-  height: auto;
+#pag1 * {
+  position: relative;
+  z-index: 1;
 }
 
-/* Imagem centralizada */
-.box img {
-  display: block;
-  margin: 0 auto;
-  max-width: 200px;
-  height: auto;
-  border-radius: 10px;
-}
 
-/* Título */
-.box h2 {
-  white-space: nowrap;
-  font-family:"Oswald", sans-serif;;
-  font-size: 80px;
-  color: darkgoldenrod;
-  margin-top: 20px;
-  padding-right: 400px;
-  /*background-color: aqua;*/
-}
 
-/* Parágrafo */
-.dbv p {
-  text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
-                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-top: 30px;
-  color: black;
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* ====================================== */
+/* BOX PRINCIPAL */
+/* ====================================== */
 
-/* Fundo da segunda seção */
-#pag2 {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  min-height: 100vh;
+.box1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding: 40px 20px;
+  background: rgba(51,51,51,0.6);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 1300px;
+  margin: auto;
 }
 
-/* Centraliza o conteúdo */
+.box2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.box2 img {
+  max-width: 200px;
+}
+
+.box2 h2 {
+  font-size: 60px;
+  color: rgb(221, 164, 21);
+  white-space: nowrap;
+}
+
+
+
+/* ====================================== */
+/* SEGUNDA CAIXA */
+/* ====================================== */
+.bloco {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 1100px;   /* ← permite esticar mais */
+  margin: 40px auto;
+  width: 100%;         /* ← garante que use a largura toda */
+}
+
+.bloco img {
+  width: 350px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 100px;
+  flex-shrink: 0;      /* ← impede a imagem de encolher */
+}
+
+.bloco p {
+  flex: 1;             /* ← AGORA O TEXTO ESTICA MESMO */
+  font-size: 22px;
+  line-height: 1.6;
+  color: white;
+}
+
+
+.caixa {
+  display: flex;
+  justify-content: center;
+background: rgba(29, 29, 29, 0.6);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.caixa2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.caixa3 {
+  display: flex;
+  justify-content: center;
+  background: rgba(29, 29, 29, 0.6);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.caixa4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  gap: 20px;
+  color: white;
+}
+
+.caixa4 p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* ====================================== */
+/* PARÁGRAFOS GERAIS DBV */
+/* ====================================== */
+
+#pag1 p {
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  margin: 25px auto;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+
+
+/* ====================================== */
+/* SEGUNDA SEÇÃO — ÍCONES */
+/* ====================================== */
+
 .botoes {
   margin-top: 30px;
   display: flex;
@@ -317,53 +378,30 @@ html, body {
   flex-wrap: wrap;
 }
 
-/* Ícones dos botões sociais */
 .botoes a {
   font-size: 40px;
-  color: rgb(9, 0, 0);
+  color: black;
   transition: 0.3s;
 }
 
-.botoes a:hover {
-  transform: scale(1.2);
-}
+.botoes a:hover { transform: scale(1.2); }
+.botoes a:nth-child(1):hover { color: #E4405F; }
+.botoes a:nth-child(2):hover { color: #25D366; }
 
-.botoes a:nth-child(1):hover {
-  color: #E4405F;
-}
 
-.botoes a:nth-child(2):hover {
-  color: #25D366;
-}
 
 /* ====================================== */
 /* RESPONSIVIDADE */
 /* ====================================== */
 
-/* Ajustes do carrossel e imagens */
 @media (max-width: 768px) {
-  .carrossel {
-    height: auto;
-  }
 
-  .carrossel img {
-    width: 100vw;
-    height: auto;
-  }
-}
-
-/* Menu responsivo (hambúrguer) */
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-    z-index: 1100;
-  }
+  .menu-icon { display: block; }
 
   .menu {
-    display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: white;
+    background: white;
     position: absolute;
     top: 80px;
     right: 0;
@@ -371,30 +409,15 @@ html, body {
     padding: 0 1rem;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    transition: 0.35s;
     border-radius: 0 0 6px 6px;
-  }
-
-  .menu a {
-    margin: 0.8rem 0;
   }
 
   .menu.ativo {
     max-height: 300px;
-    padding: 0.8rem 1rem;
+    padding: 1rem;
   }
-}
 
-/* No desktop o menu volta ao normal */
-@media (min-width: 769px) {
-  .menu {
-    display: flex;
-  }
-}
-
-/* Responsividade página 2 (Quem Somos) */
-@media (max-width: 768px) {
   .conteudo {
     flex-direction: column;
     text-align: center;
@@ -405,90 +428,21 @@ html, body {
     height: auto;
   }
 
-  #pagina2 h2 {
+  .box2,
+  .caixa2 {
+    flex-direction: column;
     text-align: center;
-    font-size: 30px;
   }
 
-  .texto {
-    max-width: 90%;
-  }
-
-  #pagina2 p {
-    font-size: 13px;
-  }
-}
-
-/* Responsividade - seção de botões iniciais */
-@media (max-width: 768px) {
-  #link img {
-    width: 90px;
-    height: 90px;
-  }
-
-  #link {
-    gap: 20px;
-  }
+  .box2 h2 { font-size: 40px; }
+  .caixa2 p { max-width: 90%; }
 }
 
 @media (max-width: 480px) {
+
   #link img {
     width: 70px;
     height: 70px;
-  }
-
-  #link {
-    gap: 15px;
-  }
-}
-
-/* Responsividade - página do DBV */
-@media (max-width: 1024px) {
-  .dbv h2 {
-    font-size: 32px;
-  }
-
-  .dbv p {
-    font-size: 17px;
-    max-width: 700px;
-  }
-}
-
-@media (max-width: 768px) {
-  .dbv h2 {
-    font-size: 28px;
-  }
-
-  .dbv p {
-    font-size: 16px;
-    padding: 0 10px;
-  }
-
-  .botoes a {
-    font-size: 35px;
-  }
-}
-
-@media (max-width: 480px) {
-  #pag1 {
-    padding: 20px 10px;
-  }
-
-  .dbv img {
-    max-width: 100%;
-  }
-
-  .dbv h2 {
-    font-size: 24px;
-  }
-
-  .dbv p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  .botoes {
-    gap: 25px;
   }
 
   .botoes a {
