@@ -254,7 +254,7 @@ html, body {
   background: linear-gradient(
     to bottom,
     rgba(255,255,255,0),
-    #ffffff
+    #000000
   );
   z-index: 1;
   pointer-events: none;
@@ -356,6 +356,148 @@ html, body {
 
 /* Conteúdo acima */
 #pag3 * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* avt fundo*/
+
+#pag {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
+  margin-top: 80px;
+  color: #f9f9f9;
+}
+
+/* Fundo borrado */
+#pag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('Imagens/avt1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+/* Fade para branco (embaixo) */
+#pag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 260px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    #ffffff
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Conteúdo acima do fundo */
+#pag * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ========================================= */
+/* PÁGINA 2 — FUNDO COM IMAGEM + BLUR + FADES */
+/* ========================================= */
+
+#pag0 {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
+  color: #f9f9f9;
+}
+
+/* Fundo borrado */
+#pag0::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('Imagens/avt2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+/* FADES — topo + base */
+#pag0::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background-image:
+    linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 40%),
+    linear-gradient(to top,    #ffffff 0%, rgba(255,255,255,0) 40%);
+
+  background-size: 100% 260px, 100% 260px;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+}
+
+/* CONTEÚDO DA PAG2 SEMPRE ACIMA DE TUDO */
+#pag0 * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================================= */
+/* PÁGINA 3 — FUNDO COM IMAGEM + BLUR */
+/* ========================================= */
+
+#pag01 {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+/* Fundo borrado */
+#pag01::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('Imagens/avt3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+#pag01::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 260px; /* ajuste se quiser mais/menos suavidade */
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    rgba(255,255,255,0)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Conteúdo acima */
+#pag01 * {
   position: relative;
   z-index: 2;
 }
