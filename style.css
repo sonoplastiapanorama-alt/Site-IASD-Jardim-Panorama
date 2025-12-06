@@ -228,6 +228,7 @@ html, body {
   overflow: hidden;
   padding: 40px 20px;
   margin-top: 80px;
+  color: #f9f9f9;
 }
 
 /* Fundo borrado */
@@ -254,7 +255,7 @@ html, body {
   background: linear-gradient(
     to bottom,
     rgba(255,255,255,0),
-    #000000
+    #ffffff
   );
   z-index: 1;
   pointer-events: none;
@@ -524,7 +525,7 @@ html, body {
 }
 
 .box2 img {
-  max-width: 200px;
+  max-width: auto
 }
 
 .box2 h2 {
