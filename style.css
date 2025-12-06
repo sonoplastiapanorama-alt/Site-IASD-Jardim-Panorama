@@ -137,9 +137,26 @@ html, body {
 /* ====================================== */
 
 #pagina2 {
+  position: relative;
   background-color: #f5f5f5f8;
   width: 100%;
   padding: 3rem 0;
+}
+
+/* camada no fim da página 2 */
+#pagina2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* fade maior, mais suave */
+  background: linear-gradient(
+    #f5f5f5f8 0%,
+    rgba(245,245,245,0) 100%
+  );
+  z-index: 10; /* garante que o fade apareça por cima */
+  pointer-events: none;
 }
 
 .conteudo {
@@ -180,16 +197,39 @@ html, body {
 /* ====================================== */
 
 #pagina3 {
-  background: linear-gradient(#eae9e8, rgba(0,0,0,0)),
-    url('Imagens/fundo_pedido_oracao.jpg') center/cover no-repeat;
+  position: relative;
   width: 100%;
-  height: 600px;
+  min-height: 600px; /* altura mínima */
+  height: auto;      /* cresce conforme o conteúdo */
+  padding-bottom: 60px; /* adiciona espaço no fim */
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+
+  /* mantém o degradê por cima da imagem */
+  background: linear-gradient(
+    #f5f5f5f8 0%,   /* Bem forte no início */
+    #f5f5f5f8 5%,  /* Continua forte até 40% da altura */
+    rgba(0,0,0,0) 100%
+  );
+
 }
 
+/* IMAGEM DE FUNDO (agora no HTML) */
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* igual ao background-size: cover */
+  object-position: center 100%; /* ajusta manualmente */
+  z-index: -1;
+}
+
+/* TÍTULO */
 #pagina3 h2 {
   background: #f9f9f9;
   padding: 25px;
@@ -200,6 +240,7 @@ html, body {
   text-align: center;
 }
 
+/* IFRAME */
 #pagina3 iframe {
   width: 100%;
   max-width: 453px;
@@ -207,8 +248,6 @@ html, body {
   border: 2px solid #222;
   margin-top: 50px;
 }
-
-
 
 /* ====================================== */
 /* ÍCONES SOCIAIS */
@@ -236,7 +275,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('dbv/img_dbv/IMG_20251122_092403_895.jpg');
+  background-image: url('Imagens/DBV/img_dbv/IMG_20251122_092403_895.jpg');
   background-size: cover;
   background-position: center;
   filter: blur(4px);
@@ -283,7 +322,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('dbv/img_dbv/IMG_20251122_092542_115.jpg');
+  background-image: url('Imagens/DBV/img_dbv/IMG_20251122_092542_115.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -330,7 +369,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('dbv/img_dbv/IMG-20250601-WA0015.jpg');
+  background-image: url('Imagens/DBV/img_dbv/IMG-20250601-WA0015.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -357,148 +396,6 @@ html, body {
 
 /* Conteúdo acima */
 #pag3 * {
-  position: relative;
-  z-index: 2;
-}
-
-
-/* avt fundo*/
-
-#pag {
-  position: relative;
-  overflow: hidden;
-  padding: 40px 20px;
-  margin-top: 80px;
-  color: #f9f9f9;
-}
-
-/* Fundo borrado */
-#pag::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('Imagens/avt1.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(4px);
-  transform: scale(1.1);
-  z-index: 0;
-}
-
-/* Fade para branco (embaixo) */
-#pag::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 260px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0),
-    #ffffff
-  );
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Conteúdo acima do fundo */
-#pag * {
-  position: relative;
-  z-index: 2;
-}
-
-
-/* ========================================= */
-/* PÁGINA 2 — FUNDO COM IMAGEM + BLUR + FADES */
-/* ========================================= */
-
-#pag0 {
-  position: relative;
-  overflow: hidden;
-  padding: 40px 20px;
-  color: #f9f9f9;
-}
-
-/* Fundo borrado */
-#pag0::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('Imagens/avt2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(4px);
-  transform: scale(1.1);
-  z-index: 0;
-}
-
-/* FADES — topo + base */
-#pag0::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-
-  background-image:
-    linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 40%),
-    linear-gradient(to top,    #ffffff 0%, rgba(255,255,255,0) 40%);
-
-  background-size: 100% 260px, 100% 260px;
-  background-position: top, bottom;
-  background-repeat: no-repeat;
-}
-
-/* CONTEÚDO DA PAG2 SEMPRE ACIMA DE TUDO */
-#pag0 * {
-  position: relative;
-  z-index: 2;
-}
-
-/* ========================================= */
-/* PÁGINA 3 — FUNDO COM IMAGEM + BLUR */
-/* ========================================= */
-
-#pag01 {
-  position: relative;
-  overflow: hidden;
-  padding: 40px 20px;
-}
-
-/* Fundo borrado */
-#pag01::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('Imagens/avt3.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(4px);
-  transform: scale(1.1);
-  z-index: 0;
-}
-
-#pag01::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 260px; /* ajuste se quiser mais/menos suavidade */
-  background: linear-gradient(
-    to bottom,
-    #ffffff,
-    rgba(255,255,255,0)
-  );
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Conteúdo acima */
-#pag01 * {
   position: relative;
   z-index: 2;
 }
