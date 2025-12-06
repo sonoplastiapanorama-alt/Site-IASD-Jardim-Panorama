@@ -94,7 +94,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('Imagens/DBV/img_dbv/IMG_20251122_092403_895.jpg');
+  background-image: url('Imagens/AVT/avt1.jpg');
   background-size: cover;
   background-position: center;
   filter: blur(4px);
@@ -141,7 +141,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('Imagens/DBV/img_dbv/IMG_20251122_092542_115.jpg');
+  background-image: url('Imagens/AVT/avt2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -188,7 +188,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('Imagens/DBV/img_dbv/IMG-20250601-WA0015.jpg');
+  background-image: url('Imagens/AVT/avt3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
