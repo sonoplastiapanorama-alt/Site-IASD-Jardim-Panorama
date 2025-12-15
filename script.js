@@ -20,34 +20,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 const carrossel = document.querySelector(".carrossel");
-let imagens = document.querySelectorAll(".carrossel img");
+const track = document.querySelector(".carrossel-track");
 
-let index = 0;
-const total = imagens.length;
+if (carrossel && track) {
+  let imagens = track.querySelectorAll("img");
+  let index = 0;
 
-// Clona a primeira imagem e adiciona no final (para o looping suave)
-const primeira = imagens[0].cloneNode(true);
-carrossel.appendChild(primeira);
+  const primeira = imagens[0].cloneNode(true);
+  track.appendChild(primeira);
+  imagens = track.querySelectorAll("img");
 
-// Atualiza a lista com a imagem clonada
-imagens = document.querySelectorAll(".carrossel img");
+  function trocarImagem() {
+    index++;
+    track.style.transition = "transform 1s ease";
+    track.style.transform = `translateX(-${index * 100}vw)`;
 
-function trocarImagem() {
-  index++;
-  carrossel.style.transition = "transform 1s ease";
-  carrossel.style.transform = `translateX(-${index * 100}vw)`; // <-- usa vw agora
-
-  // Quando chegar na imagem clonada, reseta sem transição
-  if (index === imagens.length - 1) {
-    setTimeout(() => {
-      carrossel.style.transition = "none";
-      carrossel.style.transform = "translateX(0)";
-      index = 0;
-    }, 1000);
+    if (index === imagens.length - 1) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
+        index = 0;
+      }, 1000);
+    }
   }
+
+  setInterval(trocarImagem, 5000);
 }
 
-setInterval(trocarImagem, 5000); // troca a cada 4 segundos
 
 
 

@@ -11,58 +11,57 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
   font-family: "Oswald", sans-serif;
 }
 
-
+body {
+  overflow-x: hidden;
+}
 
 /* ====================================== */
-/* TOPO */
+/* TOPO / HEADER */
 /* ====================================== */
 
 .topo {
   width: 100%;
-  background-color: white;
-  color: black;
+  height: 70px;
+  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.1rem 5rem;
+  padding: 0 2rem;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  font-size: 6rem;
-  font-weight: bold;
 }
 
 .logo img {
-  height: 5rem;
+  height: 3.5rem;
   width: auto;
-  position: relative;
-  right: 50px;
-  z-index: 1000;
 }
+
+/* ====================================== */
+/* MENU DESKTOP */
+/* ====================================== */
 
 .menu {
   display: flex;
   align-items: center;
+  gap: 2.5rem;
 }
 
 .menu a {
-  color: black;
+  color: #000;
   text-decoration: none;
-  margin-left: 4rem;
+  font-size: 18px;
   font-weight: 300;
-  font-size: 20px;
-  transition: color 0.3s;
 }
 
 .menu a:hover {
@@ -73,104 +72,77 @@ html, body {
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  position: relative;
-  left: 50px;
 }
-
-
 
 /* ====================================== */
 /* CARROSSEL */
 /* ====================================== */
 
 .carrossel {
-  display: flex;
+  margin-top: 70px;
+  width: 100%;
   overflow: hidden;
-  margin-top: 80px;
-  transition: transform 1s ease;
-  width: max-content;
 }
 
-.carrossel img {
-  flex-shrink: 0;
+.carrossel-track {
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.carrossel-track img {
   width: 100vw;
+  height: auto;
+  flex-shrink: 0;
   object-fit: cover;
 }
 
 /* ====================================== */
-/* PÁGINA 1 — BOTÕES INICIAIS */
+/* PÁGINA 1 — BOTÕES */
 /* ====================================== */
 
 #pagina1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 40px 20px;
 }
 
 #link {
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
 #link img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  object-fit: cover;
-  transition: 0.3s;
-  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
 }
 
 #link img:hover {
   transform: scale(0.9);
-  box-shadow: 0 2px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
 }
-
-
 
 /* ====================================== */
 /* PÁGINA 2 — QUEM SOMOS */
 /* ====================================== */
 
 #pagina2 {
-  position: relative;
-  background-color: #f5f5f5f8;
-  width: 100%;
-  padding: 3rem 0;
-}
-
-/* camada no fim da página 2 */
-#pagina2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px; /* fade maior, mais suave */
-  background: linear-gradient(
-    #f5f5f5f8 0%,
-    rgba(245,245,245,0) 100%
-  );
-  z-index: 10; /* garante que o fade apareça por cima */
-  pointer-events: none;
+  background: #f5f5f5;
+  padding: 60px 20px;
 }
 
 .conteudo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
   max-width: 1200px;
   margin: auto;
-  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 #pagina2 img {
-  width: 450px;
-  height: 450px;
-  object-fit: contain;
+  width: 420px;
+  max-width: 100%;
 }
 
 .texto {
@@ -179,16 +151,15 @@ html, body {
 
 #pagina2 h2 {
   font-size: 40px;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 #pagina2 p {
-  font-size: 14px;
-  margin-bottom: 0.8rem;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
   text-align: justify;
 }
-
-
 
 /* ====================================== */
 /* PÁGINA 3 — PEDIDO DE ORAÇÃO */
@@ -196,224 +167,143 @@ html, body {
 
 #pagina3 {
   position: relative;
-  width: 100%;
-  min-height: 600px; /* altura mínima */
-  height: auto;      /* cresce conforme o conteúdo */
-  padding-bottom: 60px; /* adiciona espaço no fim */
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-
-  /* mantém o degradê por cima da imagem */
-  background: linear-gradient(
-    #f5f5f5f8 0%,   /* Bem forte no início */
-    #f5f5f5f8 5%,  /* Continua forte até 40% da altura */
-    rgba(0,0,0,0) 100%
-  );
-
-}
-
-/* IMAGEM DE FUNDO (agora no HTML) */
-.bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* igual ao background-size: cover */
-  object-position: center 100%; /* ajusta manualmente */
-  z-index: -1;
-}
-
-/* TÍTULO */
-#pagina3 h2 {
-  background: #f9f9f9;
-  padding: 25px;
-  border-radius: 15px;
-  font-size: 30px;
-  position: relative;
-  top: 60px;
+  padding: 80px 20px;
   text-align: center;
 }
 
-/* IFRAME */
+.bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#pagina3 h2 {
+  background: #fff;
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
 #pagina3 iframe {
   width: 100%;
-  max-width: 453px;
+  max-width: 450px;
   border-radius: 10px;
   border: 2px solid #222;
-  margin-top: 50px;
 }
 
 /* ====================================== */
-/* ÍCONES SOCIAIS */
+/* ÍCONES */
 /* ====================================== */
 
-.fa-instagram { color: #E4405F; font-size: 30px; }
-.fa-whatsapp  { color: #25d366; font-size: 30px; }
+.fa-instagram { color: #E4405F; font-size: 28px; }
+.fa-whatsapp { color: #25d366; font-size: 28px; }
 
 /* ====================================== */
-/* SEGUNDA SEÇÃO — ÍCONES */
-/* ====================================== */
-
-.botoes {
-  margin-top: 30px;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.botoes a {
-  font-size: 40px;
-  color: black;
-  transition: 0.3s;
-}
-
-.botoes a:hover { transform: scale(1.2); }
-.botoes a:nth-child(1):hover { color: #E4405F; }
-.botoes a:nth-child(2):hover { color: #25D366; }
-
-/* ====================================== */
-/* RESPONSIVIDADE GERAL */
-/* ====================================== */
-
-@media (max-width: 1024px) {
-  .box2 h2 {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .box2 img {
-    max-width: 150px;
-  }
-
-  .bloco {
-    max-width: 95%;
-  }
-}
-
-/* ====================================== */
-/* TABLETS E CELULARES GRANDES */
+/* MOBILE */
 /* ====================================== */
 
 @media (max-width: 768px) {
 
-  /* MENU MOBILE */
-  .menu-icon { 
-    display: block; 
+  .menu-icon {
+    display: block;
   }
 
   .menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 240px;
+    background: #fff;
     flex-direction: column;
     align-items: flex-end;
-    background: white;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 200px;
-    padding: 0 1rem;
+    gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: 0.35s;
-    border-radius: 0 0 6px 6px;
+    transition: max-height .3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  }
+
+  .menu a {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: right;
   }
 
   .menu.ativo {
-    max-height: 300px;
-    padding: 1rem;
+    max-height: 400px;
   }
 
-  /* DESBRAVADORES (DBV) */
-  .box1, 
-  .box2 {
+  .conteudo {
     flex-direction: column;
     text-align: center;
   }
 
-  .box2 h2 {
-    font-size: 35px;
-    white-space: normal;
-  }
-
-  .box2 img {
-    max-width: 140px;
-  }
-
-  /* BLOCO DE TEXTO + IMAGEM */
-  .bloco {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .bloco img {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .caixa {
-    max-width: 100%;
-  }
-
-  /* FORMULÁRIO */
-  iframe {
-    width: 100%;
-    height: 700px;
-  }
-
-  /* GRID DE 3 COLUNAS → vira 1 */
-  .caixa4 {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  /* Ajuda o texto a não ficar espremido */
-  #pag1 p {
-    max-width: 95%;
-    font-size: 18px;
+  #pagina2 p {
+    text-align: left;
   }
 }
-
-/* ====================================== */
-/* CELULARES PEQUENOS */
-/* ====================================== */
 
 @media (max-width: 480px) {
 
-  .topo {
-    padding: 0.3rem 2rem;
+  #link img {
+    width: 70px;
+    height: 70px;
   }
 
-  .logo img {
-    height: 3.5rem;
-    right: 0;
-  }
-
-  .box2 h2 {
+  #pagina2 h2 {
     font-size: 28px;
   }
 
-  .bloco img {
-    max-width: 250px;
-  }
-
-  #pag1 p {
-    font-size: 16px;
-  }
-
-  #link img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .botoes a {
-    font-size: 26px;
-  }
-
-  iframe {
+  #pagina3 iframe {
     height: 600px;
   }
 }
+
+
+/* ====================================== */
+/* PÁGINA 1 — BOTÕES EM LISTA HORIZONTAL (MOBILE) */
+/* ====================================== */
+
+@media (max-width: 768px) {
+
+  #link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: flex-start;   /* ← CORREÇÃO-CHAVE */
+    align-items: center;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 10px 16px;
+    margin: 0;
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #link::-webkit-scrollbar {
+    display: none;
+  }
+
+  #link img {
+    flex: 0 0 auto;
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0;                    /* remove heranças */
+    transform: none;              /* remove hover desktop */
+  }
+}
+
+
