@@ -48,5 +48,35 @@ if (carrossel && track) {
 }
 
 
+/* ====================================== */
+/* LIGHTBOX */
+/* ====================================== */
+const imagensCarrossel = document.querySelectorAll(".carrossel img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxFechar = document.getElementById("lightboxFechar");
+
+imagensCarrossel.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("ativo");
+    lightboxImg.src = img.src;
+    document.body.style.overflow = "hidden";
+  });
+});
+
+lightboxFechar.addEventListener("click", fecharLightbox);
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    fecharLightbox();
+  }
+});
+
+function fecharLightbox() {
+  lightbox.classList.remove("ativo");
+  lightboxImg.src = "";
+  document.body.style.overflow = "auto";
+}
+
+
 
 
