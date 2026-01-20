@@ -10,15 +10,6 @@ body {
     background-position: center;
 }
 
-/* CELULAR */
-@media (max-width: 768px) {
-    body {
-        background-image: url("img_dbv/fundo/fundo_cell.png");
-        background-attachment: scroll; /* importante no celular */
-    }
-}
-
-
 /*Cabeçalho e titulos*/
 
 .titulo {
@@ -179,4 +170,108 @@ button {
 
     font-size: 16px;
     cursor: pointer;
+}
+
+/* === MEDIA QUERY PARA CELULAR E TABLET <= 768px === */
+@media (max-width: 768px) {
+
+    /* Corpo */
+    body {
+        background-image: url("img_dbv/fundo/fundo_cell.png");
+        background-attachment: scroll; /* fixa problemas em celular */
+        background-size: cover;
+    }
+
+    /* Títulos */
+    .titulo {
+        width: 90%; /* ocupa quase toda a tela */
+        font-size: 18px;
+    }
+
+    /* Caixa do topo (#t1) */
+    #t1 {
+        width: 90%; /* adapta à tela */
+        margin: -50px auto 20px auto; /* sobe a caixa, menos que no PC */
+        padding-top: 80px; /* menos padding */
+        border-radius: 50px; /* arredonda proporcionalmente */
+        gap: 0px;
+    }
+
+    /* Logo (#g1) */
+    #g1 {
+        width: 120px;
+        height: 110px;
+        margin: auto 0px auto 20px;
+    }
+
+    /* Caixa de conteúdo (#g2) */
+    #g2 {
+        padding: 20px;
+    }
+
+    /* T2 */
+    #t2 {
+        margin: -20px auto 10px auto;
+    }
+
+    /* Bloco pai (#p1) */
+    .blocopai#p1 {
+        flex-direction: column; /* empilha elementos verticalmente */
+        margin: 10px 10px auto 10px;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    /* Imagem #b1 */
+    #b1 {
+        width: 200px;
+        height: 200px;
+        margin: 10px auto -30px auto;
+    }
+
+    /* Texto #b2 */
+    #b2 {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Bloco carrosel (#p2) */
+    .blocopai#p2 {
+        flex-direction: column;
+        margin: 50px 10px 50px 10px;
+        gap: 20px;
+    }
+
+    /* Carrosel */
+    .carousel {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    /* Caixa de conteúdo do carrosel (#c2) */
+    #c2 {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    #c2 p {
+        font-size: 18px;
+    }
+
+    /* Formulário */
+    .formulario fieldset {
+        padding: 8px;
+    }
+
+    input, textarea {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
 }
