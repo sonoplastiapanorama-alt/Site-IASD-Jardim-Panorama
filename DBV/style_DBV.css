@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+
+    background-image: url(img_dbv/fundo/fundo4.jpg);
+    background-repeat: repeat;
+    background-size: 40%;
+    background-position: center;
+}
+
+
+/*Cabeçalho e titulos*/
+
+.titulo {
+    width: 400px;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+#t1 {
+    margin: 60px auto 60px auto;
+}
+
+#t2 {
+    margin: 60px auto 10px;
+}
+
+/*Bloco da imagem/explicação*/
+
+.blocopai#p1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgb(207, 104, 8);
+    border-radius: 30px 10px;
+    background-color: bisque;
+
+}
+
+#b1 {
+    margin: 5px auto;
+    width: 250px;
+    height: 250px;
+    background-image: url(img_dbv/fotos/250x250.png);
+    border-radius: 10px;
+
+}
+
+#b2 {
+    text-align: left;
+    margin: 5px auto;
+    padding: 10px;
+}
+
+/*Carrosel feito com Bootstrap5 e IA*/
+
+.carousel {
+    max-width: 500px;
+    /*comprimento*/
+    margin: 10px auto;
+}
+
+.carousel-item {
+    max-height: 400px;
+    /*altura*/
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Bloco carrosel*/
+
+.blocopai#p2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#c1 {
+    margin: 50px;
+    padding: 12px;
+    border: 5px solid rgb(207, 104, 8);
+    border-radius: 30px 10px;
+    background-color: bisque;
+}
+
+#c2 {
+
+    text-align: right;
+    margin: 5px;
+    padding: 10px;
+    border: 5px solid rgb(207, 104, 8);
+    border-radius: 30px 10px;
+    background-color: bisque;
+}
+
+#c2 p {
+    text-align: left;
+}
