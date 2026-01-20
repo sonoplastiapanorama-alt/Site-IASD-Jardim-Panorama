@@ -1,3 +1,9 @@
+
+html {
+    scroll-behavior: smooth; /* rolagem suave */
+    overflow-y: scroll; /* garante barra vertical */
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -8,6 +14,30 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+}
+
+/* Barra inteira */
+html::-webkit-scrollbar {
+    width: 12px; /* largura da barra */
+    background-color: #0B3559;
+}
+
+/* Fundo da barra */
+html::-webkit-scrollbar-track {
+    background: #0B3559;
+    border-radius: 10px;
+}
+
+/* "Polegar" que você arrasta */
+html::-webkit-scrollbar-thumb {
+    background-color: #cf7200;
+    border-radius: 10px;
+    border: 3px solid #0B3559;
+}
+
+/* Efeito ao passar o mouse */
+html::-webkit-scrollbar-thumb:hover {
+    background-color: #b85a00;
 }
 
 /*Cabeçalho e titulos*/
