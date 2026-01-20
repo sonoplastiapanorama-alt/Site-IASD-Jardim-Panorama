@@ -67,8 +67,8 @@ body {
 
 #b1 {
     margin: auto auto auto 30px;
-    width: 400px;
-    height: 324px;
+    width: 53vh;
+    height: 45vh;
     background-image: url(img_dbv/fotos/500x500.png);
     background-size: contain;
     border: 5px ridge #ffffff;
