@@ -32,16 +32,19 @@ body {
 
 }
 
-#g1{
+#g1 {
     background-image: url("img_dbv/DBV_logo.png");
     width: 140px;
     height: 150px;
-    background-size: contain; /* ajusta imagem inteira dentro do elemento */
-    background-repeat: no-repeat; /* evita repetir */
-    background-position: center; /* centraliza */
+    background-size: contain;
+    /* ajusta imagem inteira dentro do elemento */
+    background-repeat: no-repeat;
+    /* evita repetir */
+    background-position: center;
+    /* centraliza */
 }
 
-#g2{
+#g2 {
     margin: 0px;
     padding: 30px;
 }
@@ -85,13 +88,13 @@ body {
 /*Carrosel feito com Bootstrap5 e IA*/
 
 .carousel {
-    max-width: 500px;
+    max-width: 800px;
     /*comprimento*/
     margin: 10px auto;
 }
 
 .carousel-item {
-    max-height: 400px;
+    max-height: 600px;
     /*altura*/
     display: flex;
     justify-content: center;
@@ -102,30 +105,48 @@ body {
 
 .blocopai#p2 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 150px 0px 100px 0px;
-    border-radius: 10px;
+    background-image: url(img_dbv/fundo/fundo\ metade.png);
+    background-repeat: repeat;
+    background-size: contain;
+    width: 1000px;
+    height: 1300px;
+    margin: 50px auto 50px auto;
+    padding: 50px;
     gap: 50px;
+    box-shadow: 3px 5px 16px rgb(0, 0, 0);
 }
 
 #c1 {
-    margin: 80px 0px 20px 0px;
+    margin: 10px 0px 0px 0px;
+
+}
+
+#c1 h2 {
+    width: 600px;
+    font-size: 52px;
+    margin: 0px auto 40px auto;
 
 }
 
 #c2 {
     text-align: left;
     margin: 0px 0px 0px 0px;
-    border: 2px solid gray;
-    background-color: white;
-    border-radius: 5px;
-    width: 40%;
+    width: 100%;
+    height: 40%;
 }
 
 #c2 p {
+    margin: auto auto 10px;
+    width: 400px;
+    background-color: white;
+    border: 4px outset #cf7200;
+    border-radius: 8px;
     margin-top: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #cf7200;
     font-size: 24px;
     font-weight: 500;
     text-align: center;
@@ -140,21 +161,23 @@ body {
 }
 
 .formulario fieldset {
-    border: 1px solid #ccc;
+    background-color: white;
+    border: 4px outset #cf7200;
     border-radius: 8px;
 
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .formulario legend {
     text-align: center;
     padding: 0px 0px;
     font-weight: bold;
-    color: gray;
+    color: #cf7200;
 }
 
-input,textarea {
+input,
+textarea {
     width: 100%;
 }
 
@@ -162,11 +185,11 @@ button {
     align-self: center;
     padding: 12px 20px;
 
-    background-color: gray;
+    background-color: #cf7200;
     color: #fff;
 
-    border: none;
     border-radius: 10px;
+    border: none;
 
     font-size: 16px;
     cursor: pointer;
@@ -178,22 +201,28 @@ button {
     /* Corpo */
     body {
         background-image: url("img_dbv/fundo/fundo_cell.png");
-        background-attachment: scroll; /* fixa problemas em celular */
+        background-attachment: scroll;
+        /* fixa problemas em celular */
         background-size: cover;
     }
 
     /* Títulos */
     .titulo {
-        width: 90%; /* ocupa quase toda a tela */
+        width: 90%;
+        /* ocupa quase toda a tela */
         font-size: 18px;
     }
 
     /* Caixa do topo (#t1) */
     #t1 {
-        width: 90%; /* adapta à tela */
-        margin: -50px auto 20px auto; /* sobe a caixa, menos que no PC */
-        padding-top: 80px; /* menos padding */
-        border-radius: 50px; /* arredonda proporcionalmente */
+        width: 90%;
+        /* adapta à tela */
+        margin: -50px auto 20px auto;
+        /* sobe a caixa, menos que no PC */
+        padding-top: 80px;
+        /* menos padding */
+        border-radius: 50px;
+        /* arredonda proporcionalmente */
         gap: 0px;
     }
 
@@ -216,7 +245,8 @@ button {
 
     /* Bloco pai (#p1) */
     .blocopai#p1 {
-        flex-direction: column; /* empilha elementos verticalmente */
+        flex-direction: column;
+        /* empilha elementos verticalmente */
         margin: 10px 10px auto 10px;
         gap: 20px;
         padding: 10px;
@@ -224,9 +254,13 @@ button {
 
     /* Imagem #b1 */
     #b1 {
-        width: 200px;
-        height: 200px;
-        margin: 10px auto -30px auto;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        background-image: none;
+        /* remove a imagem no mobile */
+        border: none;
+        /* opcional: tira borda se quiser */
     }
 
     /* Texto #b2 */
@@ -239,15 +273,38 @@ button {
 
     /* Bloco carrosel (#p2) */
     .blocopai#p2 {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* empilha elementos verticalmente */
         margin: 50px 10px 50px 10px;
         gap: 20px;
+        width: 95%;
+        /* ocupa quase toda a tela */
+        height: auto;
+        /* ajusta altura automaticamente */
+        padding: 30px;
+        /* menos padding no mobile */
     }
 
     /* Carrosel */
     .carousel {
-        max-width: 90%;
+        max-width: 100%;
         margin: 20px auto;
+    }
+
+    .carousel-item {
+        max-height: 400px;
+        /* ajusta a altura para celular */
+    }
+
+    /*h2 do carrosel*/
+    #c1 h2 {
+        width: 300px;
+        font-size: 28px;
+        margin: 0px auto 40px auto;
+
     }
 
     /* Caixa de conteúdo do carrosel (#c2) */
@@ -257,7 +314,16 @@ button {
     }
 
     #c2 p {
-        font-size: 18px;
+        margin: auto auto 5px -6px;
+        width: 300px;
+        background-color: white;
+        border: 4px outset #cf7200;
+        border-radius: 8px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #cf7200;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
     }
 
     /* Formulário */
@@ -265,7 +331,8 @@ button {
         padding: 8px;
     }
 
-    input, textarea {
+    input,
+    textarea {
         width: 100%;
         font-size: 14px;
     }
