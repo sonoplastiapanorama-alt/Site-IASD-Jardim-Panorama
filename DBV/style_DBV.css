@@ -23,7 +23,7 @@ body {
 }
 
 #t2 {
-    margin: 60px auto 10px;
+    margin: -30px auto 10px auto;
 }
 
 /*Bloco da imagem/explicação*/
@@ -32,14 +32,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto -20px auto -20px;
     border: 5px solid rgb(207, 104, 8);
-    border-radius: 30px 10px;
     background-color: bisque;
-
+    gap: 20px;
 }
 
 #b1 {
-    margin: 5px auto;
+    margin: 5px;
     width: 250px;
     height: 250px;
     background-image: url(img_dbv/fotos/250x250.png);
@@ -49,8 +49,8 @@ body {
 
 #b2 {
     text-align: left;
-    margin: 5px auto;
-    padding: 10px;
+    margin: 0px;
+    padding: 30px;
 }
 
 /*Carrosel feito com Bootstrap5 e IA*/
@@ -64,8 +64,6 @@ body {
 .carousel-item {
     max-height: 400px;
     /*altura*/
-    background-color: black;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,27 +75,72 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    margin: 150px -20px 100px -20px;
+    border: 5px solid rgb(207, 104, 8);
+    border-radius: 10px;
+    background-color: bisque;
+    gap: 50px;
 }
 
 #c1 {
-    margin: 50px;
-    padding: 12px;
-    border: 5px solid rgb(207, 104, 8);
-    border-radius: 30px 10px;
-    background-color: bisque;
+    margin: 80px 0px 20px 0px;
+
 }
 
 #c2 {
-
-    text-align: right;
-    margin: 5px;
-    padding: 10px;
-    border: 5px solid rgb(207, 104, 8);
-    border-radius: 30px 10px;
-    background-color: bisque;
+    text-align: left;
+    margin: 0px 0px 0px 0px;
+    border: 2px solid gray;
+    background-color: white;
+    border-radius: 5px;
+    width: 40%;
 }
 
 #c2 p {
-    text-align: left;
+    margin-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/*Formulario*/
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.formulario legend {
+    text-align: center;
+    padding: 0px 0px;
+    font-weight: bold;
+    color: gray;
+}
+
+input,textarea {
+    width: 100%;
+}
+
+button {
+    align-self: center;
+    padding: 12px 20px;
+
+    background-color: gray;
+    color: #fff;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    cursor: pointer;
 }
