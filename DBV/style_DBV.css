@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     position: relative;
 
-    background-image: url(img_dbv/fundo/fundo_pc.png);
+    background-color: #0B3559;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -229,7 +229,7 @@ button {
 
     /* Corpo */
     body {
-        background-image: url("img_dbv/fundo/fundo_cell.png");
+        background-color: #0B3559;
         background-attachment: scroll; 
         background-size: cover;
     }
