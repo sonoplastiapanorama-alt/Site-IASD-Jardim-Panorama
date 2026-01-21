@@ -1,309 +1,100 @@
-/* ====================================== */
-/* RESET BÁSICO */
-/* ====================================== */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  font-family: "Oswald", sans-serif;
-}
-
+html,
 body {
-  overflow-x: hidden;
-}
-
-/* ====================================== */
-/* TOPO / HEADER */
-/* ====================================== */
-
-.topo {
-  width: 100%;
-  height: 70px;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 3.5rem;
-  width: auto;
-}
-
-/* ====================================== */
-/* MENU DESKTOP */
-/* ====================================== */
-
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-
-.menu a {
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 300;
-}
-
-.menu a:hover {
-  color: #d1cfc6;
-}
-
-.menu-icon {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* ====================================== */
-/* CARROSSEL */
-/* ====================================== */
-
-.carrossel {
-  margin-top: 70px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.carrossel-track {
-  display: flex;
-  transition: transform 1s ease;
-}
-
-.carrossel-track img {
-  width: 100vw;
-  height: auto;
-  flex-shrink: 0;
-  object-fit: cover;
-}
-
-/* ====================================== */
-/* PÁGINA 1 — BOTÕES */
-/* ====================================== */
-
-#pagina1 {
-  padding: 40px 20px;
-}
-
-#link {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-#link img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  transition: transform .3s, box-shadow .3s;
-}
-
-#link img:hover {
-  transform: scale(0.9);
-  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-}
-
-/* ====================================== */
-/* PÁGINA 2 — QUEM SOMOS */
-/* ====================================== */
-
-#pagina2 {
-  background: #f5f5f5;
-  padding: 60px 20px;
-}
-
-.conteudo {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-#pagina2 img {
-  width: 420px;
-  max-width: 100%;
-}
-
-.texto {
-  max-width: 600px;
-}
-
-#pagina2 h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-
-#pagina2 p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  text-align: justify;
-}
-
-/* ====================================== */
-/* PÁGINA 3 — PEDIDO DE ORAÇÃO */
-/* ====================================== */
-
-#pagina3 {
-  position: relative;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.bg-img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  background-color: blue;
 }
 
-#pagina3 h2 {
-  background: #fff;
-  display: inline-block;
-  padding: 20px 30px;
-  border-radius: 12px;
-  margin-bottom: 40px;
-}
-
-#pagina3 iframe {
+#topo {
+  background-color: aquamarine;
   width: 100%;
-  max-width: 450px;
-  border-radius: 10px;
-  border: 2px solid #222;
+  height: 60px;
+  margin: auto;
 }
 
-/* ====================================== */
-/* ÍCONES */
-/* ====================================== */
-
-.fa-instagram { color: #E4405F; font-size: 28px; }
-.fa-whatsapp { color: #25d366; font-size: 28px; }
-
-/* ====================================== */
-/* MOBILE */
-/* ====================================== */
-
-@media (max-width: 768px) {
-
-  .menu-icon {
-    display: block;
-  }
-
-  .menu {
-    position: fixed;
-    top: 70px;
-    right: 0;
-    width: 240px;
-    background: #fff;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,.15);
-  }
-
-  .menu a {
-    width: 100%;
-    padding: 15px 20px;
-    text-align: right;
-  }
-
-  .menu.ativo {
-    max-height: 400px;
-  }
-
-  .conteudo {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #pagina2 p {
-    text-align: left;
-  }
+.container {
+  display: flex;
 }
 
-@media (max-width: 480px) {
-
-  #link img {
-    width: 70px;
-    height: 70px;
-  }
-
-  #pagina2 h2 {
-    font-size: 28px;
-  }
-
-  #pagina3 iframe {
-    height: 600px;
-  }
+.container#p1 {
+  flex-direction: row;
+  justify-content: center;
 }
 
-
-/* ====================================== */
-/* PÁGINA 1 — BOTÕES EM LISTA HORIZONTAL (MOBILE) */
-/* ====================================== */
-
-@media (max-width: 768px) {
-
-  #link {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    justify-content: flex-start;   /* ← CORREÇÃO-CHAVE */
-    align-items: center;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    width: 100%;
-    max-width: 100%;
-
-    padding: 10px 16px;
-    margin: 0;
-
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  #link::-webkit-scrollbar {
-    display: none;
-  }
-
-  #link img {
-    flex: 0 0 auto;
-
-    width: 80px;
-    height: 80px;
-
-    margin: 0;                    /* remove heranças */
-    transform: none;              /* remove hover desktop */
-  }
+.box1 {
+  width: 500px;
+  height: 1030px;
+  border-radius: 20px;
 }
 
+#sobre {
+  background-color: cadetblue;
+  margin: 30px 30px 30px 0px;
+}
 
+.container#p2 {
+  flex-direction: column;/* empilhadas */
+  flex-direction: row-reverse;
+  flex-direction: column-reverse;
+}
+
+.box2 {
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+}
+
+#anuncios {
+  background-color: blueviolet;
+  margin: 30px 30px 30px 30px;
+}
+
+.container#p3 {
+  flex-wrap: wrap;     /* quebra linha conforme a quantidade */
+  gap: 16px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.box3 {
+  flex: 1 1 160px;        /* tamanho mínimo */
+  max-width: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+  background: #1f3c88;
+  aspect-ratio: 1 / 1;   /* largura = altura */
+  border-radius: 50%;
+
+  text-decoration: none;
+  color: white;
+  text-align: center;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box3 img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+}
+
+.box3:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+#departamentos {
+  background-color: brown;
+  margin: 0px 30px 30px 30px;
+}
