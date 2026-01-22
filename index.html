@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IASD Jardim Panorama</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="shortcut icon" href="Imagens/Pag-Inicial/logo/favicon.ico" type="image/x-icon">
 </head>
@@ -14,7 +15,31 @@
 
   <div class="container" id="p1">
     <div class="container" id="p2">
-      <section class="box2" id="departamentos">
+      <section class="box2" id="anuncios">
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </section>
+      <section class="box2" id="ministerios">
         <h2>Ministérios</h2>
         <nav class="container" id="p3">
 
@@ -64,22 +89,21 @@
             <a href="#" class="box3">
               <img src="Imagens/Pag-Inicial/botoes/M.i.png" alt="Ministério da Criança">
             </a>
-            <span class="nomeB">M. criança</span>
+            <span class="nomeB">Ministério <br>da criança</span>
           </div>
 
         </nav>
 
       </section>
 
-      <section class="box2" id="anuncios">
-        <figure></figure>
-      </section>
     </div>
 
     <section class="box1" id="sobre">
 
     </section>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
