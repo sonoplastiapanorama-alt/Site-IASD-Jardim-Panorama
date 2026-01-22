@@ -23,13 +23,17 @@ html, body {
   top: 0;            /* posiciona no topo da página */
   left: 0;           /* alinha à esquerda */
   z-index: 1000;     /* garante que fique acima de outros elementos */
+
+  display: flex;           /* deixa o container flexível */
+  align-items: center;     /* centraliza verticalmente */
+  justify-content: flex-start; /* alinha à esquerda (ou center, right, space-between) */
+  padding: 0 20px;         /* dá espaçamento nas laterais */
 }
 
 #topo img{
-  width: 60px;
-  height: 100px;
-  padding: auto;
-
+  width: 130px;
+  height: auto;
+  object-fit: contain; /* mantém proporção */
 }
 
 .container {
