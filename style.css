@@ -17,6 +17,7 @@ html, body {
   overflow-x: hidden; /* nunca mostra scroll horizontal */
 }
 
+/*Barra superior*/
 #topo {
   background-image: linear-gradient(90deg, rgb(0, 39, 107), rgb(83, 94, 215), rgb(133, 205, 241) );
   width: 100%;
@@ -27,7 +28,7 @@ html, body {
   top: 0;            /* posiciona no topo da página */
   left: 0;           /* alinha à esquerda */
   z-index: 1000;     /* garante que fique acima de outros elementos */
-
+  
   display: flex;           /* deixa o container flexível */
   align-items: center;     /* centraliza verticalmente */
   justify-content: flex-start; /* alinha à esquerda (ou center, right, space-between) */
@@ -40,10 +41,36 @@ html, body {
   object-fit: contain; /* mantém proporção */
 }
 
+/* Carrossel topo */
+.swiper-topo {
+  width: 100%;
+  height: 300px; /* ajuste a altura do topo */
+  margin: 0px auto 0px auto;
+  box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.76);
+}
+
+.swiper-topo .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-topo .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Blocos*/
 .container {
   display: flex;
 }
 
+/*Botões*/
 .container#p1 {
   max-width: 100%; /* nunca ultrapassa a largura da tela */
   box-sizing: border-box; /* garante que padding não aumente o tamanho */
@@ -79,39 +106,11 @@ html, body {
   background: #fff;
 }
 
-.container#p2 {
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite quebrar linha, mas só se o flex-basis (400px) não couber */
-  width: 100%;
-  padding: 0 15px; /* Adiciona um respiro nas laterais da tela */
-}
-
-#anuncios, #sobre {
-  margin: 0 15px 15px 15px; /* mantém a margem que você quer */
-}
-
-.box2, .box1 {
-  border-radius: 20px;
-  box-shadow: 3px 4px 10px rgb(0, 0, 0);
-}
-
-.box1 {
-  /* Flexibilidade: Crescer(1), Encolher(1), Base(400px) */
-  flex: 1 1 400px; 
-  max-width: 700px;   /* Limite máximo que ele pode atingir */
-  min-height: 500px;
-  height: auto;
-  /* Margens: Cima/Baixo=0, Esquerda/Direita=15px (reduzi para caber melhor) */
-  margin: 0 15px 30px 15px;
-}
-
-.box2 {
-  flex: 1 1 400px; 
-  max-width: 800px;
-  min-height: 500px;
-  height: auto;
-  margin: 0 15px 30px 15px;
+.item {
+  flex: 0 0 auto; /* faz cada item não encolher nem expandir, mantendo tamanho */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .box3 {
@@ -146,13 +145,6 @@ html, body {
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6)); /* sombra real da imagem */
 }
 
-.item {
-  flex: 0 0 auto; /* faz cada item não encolher nem expandir, mantendo tamanho */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .nomeB {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -162,6 +154,63 @@ html, body {
   font-size: 0.95rem;
   color: #000000;
   text-align: center;
+}
+
+/* Bloco dos anuncios-sobre*/
+.container#p2 {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite quebrar linha, mas só se o flex-basis (400px) não couber */
+  width: 100%;
+  padding: 0 15px; /* Adiciona um respiro nas laterais da tela */
+}
+
+.box2, .box1 {
+  border-radius: 20px;
+  box-shadow: 3px 4px 10px rgb(0, 0, 0);
+}
+
+/*anuncios*/
+.box2 {
+  flex: 1 1 400px; 
+  max-width: 800px;
+  min-height: 500px;
+  height: auto;
+  margin: 0 15px 30px 15px;
+}
+#anuncios, #sobre {
+  margin: 0 15px 15px 15px; /* mantém a margem que você quer */
+}
+
+/*Carrossel-anuncios*/
+.swiper-anuncios {
+  width: 100%; /* Ocupa 100% da .box2, seja qual for o tamanho dela agora */
+  min-height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.swiper-anuncios .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-anuncios .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*sobre*/
+.box1 {
+  /* Flexibilidade: Crescer(1), Encolher(1), Base(400px) */
+  flex: 1 1 400px; 
+  max-width: 700px;   /* Limite máximo que ele pode atingir */
+  min-height: 500px;
+  height: auto;
+  /* Margens: Cima/Baixo=0, Esquerda/Direita=15px (reduzi para caber melhor) */
+  margin: 0 15px 30px 15px;
 }
 
 #sobre {
@@ -195,7 +244,7 @@ html, body {
   margin: 20px auto;
 }
 
-
+/*segunta metade do site*/
 #metadeB {
   width: 100%;
   height: 500px;
@@ -204,47 +253,5 @@ html, body {
   border-radius: 0px;
 }
 
-/* Carrossel topo */
-.swiper-topo {
-  width: 100%;
-  height: 300px; /* ajuste a altura do topo */
-  margin: 0px auto 0px auto;
-  box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.76);
-}
 
-.swiper-topo .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #444;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-topo .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/*Carrossel-anuncios*/
-.swiper-anuncios {
-  width: 100%; /* Ocupa 100% da .box2, seja qual for o tamanho dela agora */
-  min-height: 500px;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.swiper-anuncios .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-anuncios .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
