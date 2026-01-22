@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ html, body {
   background-color: rgb(255, 255, 255);
   padding-top: 30px; /* mesma altura do #topo */
   scroll-behavior: smooth;
+  overflow-x: hidden; /* evita barra lateral em zoom */
 }
 
 #topo {
@@ -42,10 +44,14 @@ html, body {
 }
 
 .container#p1 {
+  max-width: 100vw; /* nunca ultrapassa a largura da tela */
+  box-sizing: border-box; /* garante que padding não aumente o tamanho */
   scroll-behavior: smooth;
+
   background-color: #fff;
   width: 100%;
   height: 140px;
+  margin: 10px 0;
 
   flex-wrap: nowrap;        /* impede quebra de linha */
   overflow-x: auto;         /* scroll horizontal */
@@ -75,41 +81,36 @@ html, body {
 .container#p2 {
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap; /* Permite quebrar linha, mas só se o flex-basis (400px) não couber */
+  width: 100%;
+  padding: 0 15px; /* Adiciona um respiro nas laterais da tela */
+}
+
+#anuncios, #sobre {
+  margin: 0 15px 15px 15px; /* mantém a margem que você quer */
+}
+
+.box2, .box1 {
+  border-radius: 20px;
+  box-shadow: 3px 4px 10px rgb(0, 0, 0);
 }
 
 .box1 {
-  width: 700px;
-  height: 500px;
-  border-radius: 20px;
-  box-shadow: 3px 4px 10px rgb(0, 0, 0);
+  /* Flexibilidade: Crescer(1), Encolher(1), Base(400px) */
+  flex: 1 1 400px; 
+  max-width: 700px;   /* Limite máximo que ele pode atingir */
+  min-height: 500px;
+  height: auto;
+  /* Margens: Cima/Baixo=0, Esquerda/Direita=15px (reduzi para caber melhor) */
+  margin: 0 15px 30px 15px;
 }
 
 .box2 {
-  width: 800px;
-  min-height: 500px; /* altura mínima */
-  height: auto; /* cresce conforme o conteúdo */
-  border-radius: 20px;
-  box-shadow: 3px 4px 10px rgb(0, 0, 0);
-}
-
-.box3 {
-  width: 70px;
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #ffffff;
-  border-radius: 50%;
-  overflow: hidden;
-  
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.box3 span {
-  line-height: 1.2;
+  flex: 1 1 400px; 
+  max-width: 800px;
+  min-height: 500px;
+  height: auto;
+  margin: 0 15px 30px 15px;
 }
 
 .box3 {
@@ -123,6 +124,10 @@ html, body {
   overflow: visible; /* deixa a sombra da imagem sair */
   text-decoration: none;
   transition: transform 0.2s ease; /* só transform no botão, sem box-shadow */
+}
+
+.box3 span {
+  line-height: 1.2;
 }
 
 .box3 img {
@@ -155,13 +160,8 @@ html, body {
   text-align: center;
 }
 
-#anuncios {
-  margin: 0px 30px 30px 30px;
-}
-
 #sobre {
   background-image: linear-gradient(45deg, rgb(0, 39, 107), rgb(83, 94, 215), rgb(133, 205, 241) );
-  margin: 0px 30px 30px 0px;
 }
 
 #sobre h2{
@@ -173,10 +173,9 @@ html, body {
   font-size: 50px;
   color: white;
 
-  width: 400px;
-  height: auto;
-  text-align: left;
-  margin: 20px 20px auto;
+  width: 100%;      /* Ocupa a largura disponível */
+  max-width: 400px; /* Mas para de crescer se a tela for gigante */
+  margin: 30px auto auto auto;   /* Ajuste a margem para não quebrar layout */
 }
 
 #sobre p{
@@ -187,10 +186,9 @@ html, body {
   font-size: 15px;
   color: white;
 
-  width: 500px;
-  height: auto;
-  text-align: left;
-  margin: 20px 20px auto;
+  width: 100%;      /* Ocupa a largura disponível */
+  max-width: 500px; /* Limite para leitura confortável */
+  margin: 20px auto auto auto;;
 }
 
 
@@ -228,7 +226,7 @@ html, body {
 
 /*Carrossel-anuncios*/
 .swiper-anuncios {
-  width: 800px;
+  width: 100%; /* Ocupa 100% da .box2, seja qual for o tamanho dela agora */
   min-height: 500px;
   border-radius: 20px;
   overflow: hidden;
