@@ -1,9 +1,19 @@
+/*carrossel-topo*/
+var swiperTopo = new Swiper(".swiper-topo", {
+  loop: true,
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+  },
+});
+
+/*carrossel-anuncios*/
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
     effect: "fade",
     autoplay: {
-        delay: 5000, // tempo em ms (5 segundos)
-        disableOnInteraction: false, // continua mesmo se clicar
+        delay: 5000,
+        disableOnInteraction: false,
     },
     navigation: {
         nextEl: ".swiper-button-next",
