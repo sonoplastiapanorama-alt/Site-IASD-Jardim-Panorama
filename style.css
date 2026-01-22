@@ -51,7 +51,7 @@ html, body {
   overflow-x: auto;         /* scroll horizontal */
   align-items: center;      /* centraliza verticalmente */
   justify-content: center;  /* centraliza horizontalmente */
-  gap: 20px;                /* espaço entre os botões */
+  gap: 80px;                /* espaço entre os botões */
   padding: 0 10px;          /* espaçamento nas laterais */
 
   /* scrollbar invisível */
