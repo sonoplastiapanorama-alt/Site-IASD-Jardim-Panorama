@@ -163,6 +163,7 @@ html, body {
   flex-wrap: wrap; /* Permite quebrar linha, mas só se o flex-basis (400px) não couber */
   width: 100%;
   padding: 0 15px; /* Adiciona um respiro nas laterais da tela */
+  margin: 0 auto 30px auto;
 }
 
 .box2, .box1 {
