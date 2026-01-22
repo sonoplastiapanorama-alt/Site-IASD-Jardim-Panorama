@@ -124,7 +124,7 @@ html, body {
   background: #ffffff;
   border-radius: 50%;
   overflow: visible; /* deixa a sombra da imagem sair */
-  
+
   text-decoration: none;
   transition: transform 0.2s ease; /* só transform no botão, sem box-shadow */
 }
@@ -178,7 +178,7 @@ html, body {
 
   width: 100%;      /* Ocupa a largura disponível */
   max-width: 400px; /* Mas para de crescer se a tela for gigante */
-  margin: 30px 20px;   /* Ajuste a margem para não quebrar layout */
+  margin: 30px auto;   /* Ajuste a margem para não quebrar layout */
 }
 
 #sobre p{
