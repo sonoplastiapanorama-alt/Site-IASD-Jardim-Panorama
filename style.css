@@ -375,11 +375,12 @@ body {
 
   /*sobre*/
   #sobre h2 {
+    background-color: #444;
     font-size: 30px;
     width: 100%;/* Ocupa a largura disponível */
     max-width: 300px;/* Mas para de crescer se a tela for gigante */
-    margin: 30px auto;/* centraliza o bloco */
-    padding: 10px 20px;/* espaço interno */
+    margin: 30px auto 0px;/* centraliza o bloco */
+    padding:10px 20px;/* espaço interno */
     text-align: center;/* texto alinhado */
   }
 }
