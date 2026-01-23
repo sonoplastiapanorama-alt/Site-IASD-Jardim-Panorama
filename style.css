@@ -232,17 +232,20 @@ html, body {
   margin: 30px auto;   /* Ajuste a margem para não quebrar layout */
 }
 
-#sobre p{
+#sobre p {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
 
-  font-size: 20px;
+  font-size: 110%;
   color: white;
 
-  width: 100%;      /* Ocupa a largura disponível */
-  max-width: 500px; /* Limite para leitura confortável */
-  margin: 20px auto;
+  max-width: 500px;
+  margin: 10px auto;      /* centraliza o bloco */
+  padding: 10px 20px;     /* espaço interno */
+
+  text-align: justify;    /* texto alinhado */
+  box-sizing: border-box;
 }
 
 /*segunta metade do site*/
