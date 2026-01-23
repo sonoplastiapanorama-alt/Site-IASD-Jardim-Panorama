@@ -1,0 +1,292 @@
+/* ====================================== */
+/* RESET BÁSICO */
+/* ====================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Oswald", sans-serif;
+}
+
+/* ====================================== */
+/* TOPO */
+/* ====================================== */
+.topo {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.logo img {
+  height: 55px;
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.menu a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ====================================== */
+/* BASE DAS SECTIONS */
+/* ====================================== */
+section {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+/* ====================================== */
+/* PAGINA 1 */
+/* ====================================== */
+#pag1 {
+  padding-top: 120px;
+  color: white;
+}
+
+#pag1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('Imagens/AVT/avt1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+#pag1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 260px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #ffffff);
+  z-index: 1;
+}
+
+#pag1 > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====================================== */
+/* PAGINA 2 */
+/* ====================================== */
+#pag2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('Imagens/AVT/avt2.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+#pag2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 40%),
+    linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0) 40%);
+  background-size: 100% 260px;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#pag2 > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====================================== */
+/* PAGINA 3 */
+/* ====================================== */
+#pag3::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('Imagens/AVT/avt3.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+#pag3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 260px;
+  background: linear-gradient(to bottom, #ffffff, rgba(255,255,255,0));
+  z-index: 1;
+}
+
+#pag3 > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====================================== */
+/* CONTAINERS */
+/* ====================================== */
+.box1 {
+  display: flex;
+  justify-content: center;
+}
+
+.box2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.box2 img {
+  width: 180px;
+}
+
+.box2 h2 {
+  font-size: 60px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  white-space: nowrap;
+}
+
+.caixa {
+  background: rgba(29,29,29,0.6);
+  border-radius: 20px;
+  padding: 15px;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.caixa2 p {
+  font-size: 22px;
+  text-align: center;
+  color: white;
+}
+
+.bloco {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.bloco img {
+  width: 350px;
+  border-radius: 10px;
+}
+
+.box3 {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.box3 iframe {
+  width: 100%;
+  height: 900px;
+  border-radius: 10px;
+}
+
+/* ====================================== */
+/* RESPONSIVO REAL */
+/* ====================================== */
+@media (max-width: 768px) {
+
+  .topo {
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+
+  #pag1 {
+    padding-top: 110px;
+  }
+
+  .box2 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .box2 h2 {
+    font-size: 34px;
+    white-space: normal;
+  }
+
+  .bloco {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bloco img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+
+  .menu.ativo {
+    display: flex;
+  }
+
+  .box3 iframe {
+    height: 100vh;
+  }
+}
