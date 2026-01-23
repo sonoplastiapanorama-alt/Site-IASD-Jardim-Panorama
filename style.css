@@ -31,7 +31,7 @@ html, body {
   
   display: flex;           /* deixa o container flexível */
   align-items: center;     /* centraliza verticalmente */
-  justify-content: flex-start; /* alinha à esquerda (ou center, right, space-between) */
+  justify-content: center; /* alinha à esquerda (ou center, right, space-between) */
   padding: 0 20px;         /* dá espaçamento nas laterais */
 }
 
@@ -237,7 +237,7 @@ html, body {
   font-weight: 600;
   font-style: normal;
 
-  font-size: 15px;
+  font-size: 20px;
   color: white;
 
   width: 100%;      /* Ocupa a largura disponível */
