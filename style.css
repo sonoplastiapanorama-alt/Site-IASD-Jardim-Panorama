@@ -7,44 +7,58 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   background-color: rgb(255, 255, 255);
-  padding-top: 30px; /* mesma altura do #topo */
+  padding-top: 30px;
+  /* mesma altura do #topo */
   scroll-behavior: smooth;
-  overflow-y: auto;    /* scroll vertical */
-  overflow-x: hidden; /* nunca mostra scroll horizontal */
+  overflow-y: auto;
+  /* scroll vertical */
+  overflow-x: hidden;
+  /* nunca mostra scroll horizontal */
 }
 
 /*Barra superior*/
 #topo {
-  background-image: linear-gradient(90deg, rgb(0, 39, 107), rgb(83, 94, 215), rgb(133, 205, 241) );
+  background-image: linear-gradient(90deg, rgb(0, 39, 107), rgb(83, 94, 215), rgb(133, 205, 241));
   width: 100%;
   height: 60px;
   box-shadow: 0px 0px 8px rgb(0, 0, 0);
-  
-  position: fixed;   /* faz a barra ficar fixa */
-  top: 0;            /* posiciona no topo da página */
-  left: 0;           /* alinha à esquerda */
-  z-index: 1000;     /* garante que fique acima de outros elementos */
-  
-  display: flex;           /* deixa o container flexível */
-  align-items: center;     /* centraliza verticalmente */
-  justify-content: center; /* alinha à esquerda (ou center, right, space-between) */
-  padding: 0 20px;         /* dá espaçamento nas laterais */
+
+  position: fixed;
+  /* faz a barra ficar fixa */
+  top: 0;
+  /* posiciona no topo da página */
+  left: 0;
+  /* alinha à esquerda */
+  z-index: 1000;
+  /* garante que fique acima de outros elementos */
+
+  display: flex;
+  /* deixa o container flexível */
+  align-items: center;
+  /* centraliza verticalmente */
+  justify-content: center;
+  /* alinha à esquerda (ou center, right, space-between) */
+  padding: 0 20px;
+  /* dá espaçamento nas laterais */
 }
 
-#topo img{
+#topo img {
   width: 130px;
   height: auto;
-  object-fit: contain; /* mantém proporção */
+  object-fit: contain;
+  /* mantém proporção */
 }
 
 /* Carrossel topo */
 .swiper-topo {
   width: 100%;
-  height: 300px; /* ajuste a altura do topo */
+  height: 300px;
+  /* ajuste a altura do topo */
   margin: 0px auto 0px auto;
   box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.76);
 }
@@ -72,8 +86,12 @@ html, body {
 
 /*Botões*/
 .container#p1 {
-  max-width: 100%; /* nunca ultrapassa a largura da tela */
-  box-sizing: border-box; /* garante que padding não aumente o tamanho */
+  -webkit-overflow-scrolling: touch;
+
+  max-width: 100%;
+  /* nunca ultrapassa a largura da tela */
+  box-sizing: border-box;
+  /* garante que padding não aumente o tamanho */
   scroll-behavior: smooth;
 
   background-color: #fff;
@@ -81,19 +99,28 @@ html, body {
   height: 140px;
   margin: 10px 0;
 
-  flex-wrap: nowrap;        /* impede quebra de linha */
-  overflow-x: auto;         /* scroll horizontal */
-  align-items: center;      /* centraliza verticalmente */
-  justify-content: center;  /* centraliza horizontalmente */
-  gap: 80px;                /* espaço entre os botões */
-  padding: 0 10px;          /* espaçamento nas laterais */
+  flex-wrap: nowrap;
+  /* impede quebra de linha */
+  overflow-x: auto;
+  /* scroll horizontal */
+  align-items: center;
+  /* centraliza verticalmente */
+  justify-content: center;
+  /* centraliza horizontalmente */
+  gap: 80px;
+  /* espaço entre os botões */
+  padding: 0 10px;
+  /* espaçamento nas laterais */
 
   /* scrollbar invisível */
-  -ms-overflow-style: none;  /* IE e Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  /* IE e Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
-.container#p1::-webkit-scrollbar { /* Chrome, Safari e Opera */
+.container#p1::-webkit-scrollbar {
+  /* Chrome, Safari e Opera */
   display: none;
 }
 
@@ -107,7 +134,8 @@ html, body {
 }
 
 .item {
-  flex: 0 0 auto; /* faz cada item não encolher nem expandir, mantendo tamanho */
+  flex: 0 0 auto;
+  /* faz cada item não encolher nem expandir, mantendo tamanho */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,10 +151,12 @@ html, body {
 
   background: #ffffff;
   border-radius: 50%;
-  overflow: visible; /* deixa a sombra da imagem sair */
+  overflow: visible;
+  /* deixa a sombra da imagem sair */
 
   text-decoration: none;
-  transition: transform 0.2s ease; /* só transform no botão, sem box-shadow */
+  transition: transform 0.2s ease;
+  /* só transform no botão, sem box-shadow */
 }
 
 .box3 span {
@@ -141,8 +171,10 @@ html, body {
 }
 
 .box3 img:hover {
-  transform: translateY(-4px); /* levanta a imagem */
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6)); /* sombra real da imagem */
+  transform: translateY(-4px);
+  /* levanta a imagem */
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
+  /* sombra real da imagem */
 }
 
 .nomeB {
@@ -160,32 +192,39 @@ html, body {
 .container#p2 {
   flex-direction: row;
   justify-content: center;
-  flex-wrap: wrap; /* Permite quebrar linha, mas só se o flex-basis (400px) não couber */
+  flex-wrap: wrap;
+  /* Permite quebrar linha, mas só se o flex-basis (400px) não couber */
   width: 100%;
-  padding: 0 15px; /* Adiciona um respiro nas laterais da tela */
+  padding: 0 35px;
+  /* Adiciona um respiro nas laterais da tela */
   margin: 0 auto 30px auto;
 }
 
-.box2, .box1 {
+.box2,
+.box1 {
   border-radius: 20px;
   box-shadow: 3px 4px 10px rgb(0, 0, 0);
 }
 
 /*anuncios*/
 .box2 {
-  flex: 1 1 400px; 
+  flex: 1 1 400px;
   max-width: 800px;
   min-height: 500px;
   height: auto;
   margin: 0 15px 30px 15px;
 }
-#anuncios, #sobre {
-  margin: 0 15px 15px 15px; /* mantém a margem que você quer */
+
+#anuncios,
+#sobre {
+  margin: 0 15px 15px 15px;
+  /* mantém a margem que você quer */
 }
 
 /*Carrossel-anuncios*/
 .swiper-anuncios {
-  width: 100%; /* Ocupa 100% da .box2, seja qual for o tamanho dela agora */
+  width: 100%;
+  /* Ocupa 100% da .box2, seja qual for o tamanho dela agora */
   min-height: 500px;
   border-radius: 20px;
   overflow: hidden;
@@ -206,8 +245,9 @@ html, body {
 /*sobre*/
 .box1 {
   /* Flexibilidade: Crescer(1), Encolher(1), Base(400px) */
-  flex: 1 1 400px; 
-  max-width: 700px;   /* Limite máximo que ele pode atingir */
+  flex: 1 1 400px;
+  max-width: 700px;
+  /* Limite máximo que ele pode atingir */
   min-height: 500px;
   height: auto;
   /* Margens: Cima/Baixo=0, Esquerda/Direita=15px (reduzi para caber melhor) */
@@ -215,10 +255,10 @@ html, body {
 }
 
 #sobre {
-  background-image: linear-gradient(45deg, rgb(0, 39, 107), rgb(83, 94, 215), rgb(133, 205, 241) );
+  background-image: linear-gradient(45deg, rgb(0, 39, 107), rgb(83, 94, 215), rgb(133, 205, 241));
 }
 
-#sobre h2{
+#sobre h2 {
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -227,9 +267,12 @@ html, body {
   font-size: 50px;
   color: white;
 
-  width: 100%;      /* Ocupa a largura disponível */
-  max-width: 400px; /* Mas para de crescer se a tela for gigante */
-  margin: 30px auto;   /* Ajuste a margem para não quebrar layout */
+  width: 100%;
+  /* Ocupa a largura disponível */
+  max-width: 400px;
+  /* Mas para de crescer se a tela for gigante */
+  margin: 30px auto;
+  /* Ajuste a margem para não quebrar layout */
 }
 
 #sobre p {
@@ -241,17 +284,21 @@ html, body {
   color: white;
 
   max-width: 500px;
-  margin: 10px auto;      /* centraliza o bloco */
-  padding: 10px 20px;     /* espaço interno */
+  margin: 10px auto;
+  /* centraliza o bloco */
+  padding: 10px 20px;
+  /* espaço interno */
 
-  text-align: justify;    /* texto alinhado */
+  text-align: justify;
+  /* texto alinhado */
   box-sizing: border-box;
 }
 
 /*segunta metade do site*/
 #metadeB {
   width: 100%;
-  min-height: 200px; /* NÃO trave a altura */
+  min-height: 200px;
+  /* NÃO trave a altura */
   margin: auto;
 }
 
@@ -270,15 +317,69 @@ html, body {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
-  
+
   text-align: center;
   margin: 10px;
 }
 
-.mapa{
+.mapa {
   box-shadow: 3px 4px 10px rgb(0, 0, 0);
   border-radius: 20px;
-  
+
 }
 
+/*celulares*/
+@media (max-width: 600px) {
 
+  /* Carrossel topo */
+  .swiper-topo {
+    height: 90px;/* ajuste a altura do topo */
+  }
+
+  /* Botões */
+  .container#p1 {
+    height: 110px;
+    gap: 32px;
+    justify-content: flex-start;
+    padding: 0 32px;
+  }
+
+  /* Bloco dos anuncios-sobre*/
+  .container#p2 {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Permite quebrar linha, mas só se o flex-basis (400px) não couber */
+    width: 100%;
+    padding: 0 15px;
+    /* Adiciona um respiro nas laterais da tela */
+    margin: 0 auto 30px auto;
+  }
+
+  /*anuncios*/
+  .box2 {
+    flex: 1 1 400px;
+    max-width: 350px;
+    min-height: 50px;
+    height: auto;
+    margin: 0 15px 30px 15px;
+  }
+
+  /*Carrossel-anuncios*/
+  .swiper-anuncios {
+    width: 100%;/* Ocupa 100% da .box2, seja qual for o tamanho dela agora */
+    min-height: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  /*sobre*/
+  #sobre h2 {
+    font-size: 30px;
+    width: 100%;/* Ocupa a largura disponível */
+    max-width: 300px;/* Mas para de crescer se a tela for gigante */
+    margin: 30px auto;/* centraliza o bloco */
+    padding: 10px 20px;/* espaço interno */
+    text-align: center;/* texto alinhado */
+  }
+}
