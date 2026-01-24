@@ -103,14 +103,14 @@ body {
 
 /* Responsivo */
 @media (max-width: 600px) {
-  #redesa {
+  #redes a {
     width: 32px;
     height: 32px;
   }
 
   #redes a img {
-    width: 18px;
-    height: 18px;
+    width: 100%;
+    height: auto;
   }
 }
 
