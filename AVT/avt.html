@@ -1,135 +1,256 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clube de Aventureiros</title>
-  <link rel="icon" type="image/x-icon" href="Imagens/favicon (1).ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styleAVT.css">
-</head>
+  <title>Clube de Aventureiros Jardim do Vale</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(180deg, #f5f7fa, #e8f0ff);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e88e5, #43a047);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #1e88e5;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #43a047;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .programacao {
+      background: #ffffff;
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .programacao ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .programacao li {
+      padding: 10px 0;
+      font-size: 1rem;
+    }
+
+    .classes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .classe {
+      background: linear-gradient(135deg, #ffeb3b, #ffc107);
+      padding: 20px;
+      border-radius: 20px;
+      width: 220px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .lideres {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .lider {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .lider h4 {
+      margin-top: 10px;
+      color: #1e88e5;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .foto {
+      background: #ddd;
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .contato {
+      background: linear-gradient(135deg, #43a047, #1e88e5);
+      color: white;
+      border-radius: 25px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contato p {
+      margin: 10px 0;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
 <body>
 
-  <header class="topo">
-    <div class="logo">
-      <img src="Imagens/Pag-Inicial/logo/logo.png" alt="logo1" />
-    </div>
-
-    <div class="menu-icon" id="menu-icon" aria-label="Abrir menu" aria-expanded="false" role="button">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-
-    <!-- Menu normal -->
-    <nav class="menu" id="menu" aria-hidden="true">
-      <a href="index.html">Início</a>
-      <a href="index2.html" target="_blank">Anúncios</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxGrp3NXNhpurOirae2fv_rX90MU31nnYdABckixqqr8sBCA/viewform?usp=sharing&ouid=118341171037064609273"
-        target="_blank">Est.Biblico</a>
-      <a href="https://www.instagram.com/jardimpanoramaiasd?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-        target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a href="https://chat.whatsapp.com/KC58chpJCrF5bf3AEQ0ID8?mode=ems_wa_t" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-    </nav>
+  <header>
+    <img src="AVT_logo.png" alt="Logo Clube Jardim do Vale" style="max-width:120px; margin-bottom:15px;">
+    <h1>Clube de Aventureiros Jardim do Vale</h1>
+    <p>Um lugar especial para crianças crescerem com Jesus, aprenderem valores e se divertirem.</p>
   </header>
 
-
-  <section id="pag1">
-    <div class="box1">
-      <div class="box2">
-        <img src="Imagens/departamentos/AVT_logo.png" alt="dbv" width="200" height="auto">
-        <h2>Clube De Aventureiros Jardim Do Vale</h2>
-      </div>
-    </div>
-    <div class="caixa">
-      <div class="caixa2">
-        <p>
-          Você já ouviu falar no <strong>Clube de Aventureiros Jardim Do Vale</strong>?
-        </p>
-      </div>
-    </div>
-
-    <div class="bloco">
-      <img src="Imagens/AVT/avt1.jpg" alt="avt">
-      <div class="caixa">
-        <div class="caixa2">
-          <p>
-            Somos muito mais que um grupo de crianças — somos uma <em>família</em> unida por uma missão:
-            servir a Deus, ajudar o próximo e desenvolver nossas habilidades para a vida.
-          </p>
-        </div>
-      </div>
+  <section>
+    <h2>Quem Somos</h2>
+    <div class="card">
+      <img src="img/quem-somos.png" alt="Aventureiros reunidos" style="width:100%; border-radius:15px; margin-bottom:15px;">
+      <p>Somos o Clube de Aventureiros da Igreja Adventista do Sétimo Dia, atendendo crianças de 6 a 9 anos. Nosso objetivo é ajudar no desenvolvimento espiritual, social, físico e mental em um ambiente cristão, seguro e acolhedor.</p>
     </div>
   </section>
 
-  <section id="pag2">
-    <div class="bloco">
-      <img src="Imagens/AVT/avt2.jpg" alt="avt">
-      <div class="caixa">
-        <div class="caixa2">
-          <p>
-            Aqui, cada aventureiro aprende a <strong>amar a natureza</strong>,
-            a <strong>respeitar o Criador</strong>,
-            e a <strong>crescer em sabedoria, força e caráter</strong>.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="caixa">
-      <div class="caixa2">
-        <p>
-          Participamos de aventuras ao ar livre, acampamentos, trilhas,
-          projetos sociais e atividades que ensinam disciplina, amizade e fé.
-        </p>
-      </div>
-    </div>
-
-    <div class="caixa">
-      <div class="caixa2">
-        <p>
-          A missão do Clube de Aventureiros Jardim do Vale é
-          <strong>guiar crianças e adolescentes no caminho de Cristo</strong>,
-          formando <strong>líderes dedicados, solidários e preparados para servir</strong>
-          à comunidade e à igreja.
-        </p>
-      </div>
-    </div>
-
-    <div class="caixa">
-      <div class="caixa2">
-        <p>
-          Porque ser aventureiro é <strong>ser leal a Deus</strong>,
-          <strong>fiel aos princípios</strong>, e <strong>forte como o aço</strong>!
-        </p>
-      </div>
+  <section>
+    <h2>O Que Fazemos</h2>
+    <div class="card-grid">
+      <div class="card"><img src="img/biblia.png" alt="Bíblia" style="width:60px; margin-bottom:10px;"><h3>📖 Bíblia</h3><p>Histórias bíblicas e momentos espirituais.</p></div>
+      <div class="card"><img src="img/arte.png" alt="Criatividade" style="width:60px; margin-bottom:10px;"><h3>🎨 Criatividade</h3><p>Artes, músicas e atividades manuais.</p></div>
+      <div class="card"><img src="img/natureza.png" alt="Natureza" style="width:60px; margin-bottom:10px;"><h3>🌱 Natureza</h3><p>Contato com a criação de Deus.</p></div>
+      <div class="card"><img src="img/amizade.png" alt="Amizade" style="width:60px; margin-bottom:10px;"><h3>🤝 Amizade</h3><p>Aprendendo a conviver e ajudar o próximo.</p></div>
     </div>
   </section>
 
-  <section id="pag3">
-    <div class="bloco">
-      <img src="Imagens/AVT/avt3.jpg" alt="avt">
-      <div class="caixa">
-        <div class="caixa2">
-          <p>
-            Venha fazer parte desta jornada — juntos brilhamos e permanecemos firmes.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="box3">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSc_n2E45tpXCzQsXBp8cUucH-rEHxTpfj0sHd9i2iqYFNavMw/viewform?embedded=true"
-        width="640" height="925" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>
+  <section>
+    <h2>Programação</h2>
+    <div class="programacao">
+      <p><strong>Reuniões:</strong> Sábados às 15h</p>
+      <ul>
+        <li>✔ Brincadeiras educativas</li>
+        <li>✔ Louvor infantil</li>
+        <li>✔ Atividades das classes</li>
+      </ul>
     </div>
   </section>
-  <script src="script.js"></script>
+
+  <section>
+    <h2>Classes</h2>
+    <div class="classes">
+      <div class="classe">Abelhinhas Laboriosas</div>
+      <div class="classe">Luminares</div>
+      <div class="classe">Edificadores</div>
+      <div class="classe">Mãos Ajudadoras</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Liderança</h2>
+    <div class="lideres">
+      <div class="lider"><h4>Diretor(a)</h4><p>Responsável geral</p></div>
+      <div class="lider"><h4>Instrutor(a)</h4><p>Atividades e classes</p></div>
+      <div class="lider"><h4>Apoio</h4><p>Cuidado e segurança</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Galeria</h2>
+    <div class="galeria">
+      <img src="avt1.jpg" alt="Atividade dos aventureiros" style="width:100%; border-radius:15px;">
+      <img src="avt2.jpg" alt="Brincadeiras educativas" style="width:100%; border-radius:15px;">
+      <img src="avt3.jpg" alt="Momento espiritual" style="width:100%; border-radius:15px;">
+    </div>
+  </section>
+
+  <section class="contato">
+    <h2>Contato</h2>
+    <p>📍 Igreja Adventista do Sétimo Dia</p>
+    <p>📞 WhatsApp: (00) 00000-0000</p>
+    <p>📧 Email: aventureiros@igreja.com</p>
+  </section>
+
+  <footer>
+    <p>Clube de Aventureiros Jardim do Vale • Igreja Adventista do Sétimo Dia</p>
+  </footer>
+
 </body>
-
 </html>
